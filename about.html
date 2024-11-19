@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PrintGrid</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a> |
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a> |
+            <span><i class="fas fa-phone-alt"></i> Call: +91 1234567890</span>
+        </div>
+        <div class="user-links">
+            <a href="#"><i class="fas fa-envelope"></i> Email Us</a>
+            <a href="support.html"><i class="fas fa-headset"></i> 24/7 Support</a>
+        </div>
+    </div>
+    <style>
+    /* General Reset */
+ 
+    /* Top Bar Styling */
+    .top-bar {
+        background: linear-gradient(135deg, #0062cc, #00509e);
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-bottom: 2px solid #004080;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .top-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        transform: skewX(-30deg);
+        animation: moveBackground 6s linear infinite;
+    }
+    
+    .top-bar a, .top-bar span {
+        color: white;
+        text-decoration: none;
+        margin: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .top-bar a:hover, .top-bar span:hover {
+        color: #b3d4ff;
+        transform: scale(1.1);
+    }
+    
+    .top-bar a i, .top-bar span i {
+        margin-right: 8px;
+        font-size: 1.1em;
+    }
+    
+    @keyframes moveBackground {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .top-bar {
+            font-size: 0.85em;
+            padding: 10px 16px;
+        }
+    }
+    
+    @media (max-width: 490px) {
+        .top-bar {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .top-bar {
+            display: flex;
+        }
+    }
+    </style>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="printgridz logo.jpg" alt="Logo" style="height: 50px;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+ 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">BackDrops</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumAdjustableBackdrop.html" class="dropdown-item">Premium Adjustable Backdrop</a>
+                        <a href="EconomyAdjustableBackdrop.html" class="dropdown-item">Economy Adjustable Backdrop (Imported)</a>
+                        <a href="PopUpBackdropDisply.html" class="dropdown-item">Pop Up Backdrop Disply - Velcro</a>
+                     </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Stand</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumWoodenEaselStand.html" class="dropdown-item">Premium Wooden Easel Stand</a>
+                        <a href="EconomyWoodenEaselStand.html" class="dropdown-item">Economy Wooden Easel Stand</a>
+                        <a href="MiniWoodenEaselStand.html" class="dropdown-item">Mini Wooden Easel Stand</a>
+                        <a href="MSEaselStand.html" class="dropdown-item">MS Easel Stand</a>
+                        <a href="PremiumTripodEaselStand.html" class="dropdown-item">Premium Tripod Easel Stand</a>
+                        <a href="ZigZagBrochureStandAluminium.html" class="dropdown-item">ZigZag Brochure Stand- Aluminium</a>
+                        <a href="MSZigZagBrochureStand.html" class="dropdown-item">MS ZigZag Brochure Stand</a>
+                        <a href="AcrylicBrochureStand.html" class="dropdown-item">Acrylic Brochure Stand</a>
+                        <a href="NewspaperStand.html" class="dropdown-item">NewsPaper Stand</a>
+                        <a href="SunboardStand.html" class="dropdown-item">Sunboard Stand</a>
+                        <a href="DoubleSidePosterStand.html" class="dropdown-item">Double Side Poster Stand</a>
+                        <a href="PosterFloorStand.html" class="dropdown-item">Poster Floor Stand</a>
+                        <a href="TripodStand.html" class="dropdown-item">Tripod Stand</a>
+                        <a href="CorrugatedPOP.html" class="dropdown-item">Corrugated POP Display Stand</a>
+
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Standees</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="RollUpStandee.html" class="dropdown-item">Roll Up Standee                        </a>
+                        <a href="BlackPremiumRollUpStandee.html" class="dropdown-item">Black Premium Roll Up Standee</a>
+                        <a href="LuxuryRollUpStandee.html" class="dropdown-item">Luxury Roll Up Standee</a>
+                        <a href="TriangleBaseRollUpStandee.html" class="dropdown-item">Triangle Base Roll Up Standee</a>
+                        <a href="MiniRollUpStandee.html" class="dropdown-item">Mini Roll Up Standee</a>
+                        <a href="DoubleSidePremiumRollUpStandee.html" class="dropdown-item">Double Side Premium Roll Up Standee</a>
+                        <a href="DoubleSideMiniRollUpStandee.html" class="dropdown-item">Double Side Mini Roll Up Standee</a>
+                        <a href="XBannerStandee.html" class="dropdown-item">X Banner Standee (Indoor)</a>
+                        <a href="LBannerStandee.html" class="dropdown-item">L Banner Standee (Indoor)</a>
+                        <a href="DoubleBannerStandee.html" class="dropdown-item">Double Banner Standee (Indoor)</a>
+                        <a href="minix.html" class="dropdown-item">Mini X Banner Standee</a>
+                        <a href="lamastandee.html" class="dropdown-item">LAMA Standee Foldable</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="garebotent.html" class="dropdown-item">Gazebo Tent</a>
+                        <a href="canopytent.html" class="dropdown-item">Canopy Tent</a>
+                        <a href="promotionalumbrella.html" class="dropdown-item">Promotional Umbrella</a>
+                        <a href="promotionalflags.html" class="dropdown-item">Promotional Flags (Feather/ Teardrop)</a>
+                        <a href="clipsonledframe.html" class="dropdown-item">Clip on LED Frame</a>
+                        <a href="backlitfabric.html" class="dropdown-item">Backlit Fabric Frame</a>
+                        <a href="Acrylicaluminiumframe.html" class="dropdown-item">Acrylic Aluminium Frame</a>
+                        <a href="slimled.html" class="dropdown-item">Slim LED Frame</a>
+                        <a href="neonled.html" class="dropdown-item">NEON LED Lights</a>
+                        <a href="nonlitaluminium.html" class="dropdown-item">Nonlit Aluminium Frame</a>
+                        <a href="gardenumbrella.html" class="dropdown-item">Garden Umbrella</a>
+                        <a href="Parachutedangler.html" class="dropdown-item">Parachute Dangler</a>
+                     </div>
+                </div>
+            </div>
+            <form class="d-flex ms-lg-3 position-relative">
+                <input class="form-control search-input" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <style>
+                * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Search Bar Customization */
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    margin-right: 40px;
+    padding: 0.6rem 1.5rem;
+    width: 250px;
+    transition: width 0.4s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    color: #333;
+}
+
+.search-input:focus {
+    width: 350px;
+    outline: none;
+    border-color: #3390ec;
+    box-shadow: 0px 8px 16px rgba(0, 213, 255, 0.3);
+    background-color: #ffffff;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #106cc9;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn:hover {
+    background-color: #69aff5;
+    transform: translateY(-50%) scale(1.05); /* Slightly smooth zoom effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.search-btn:active {
+    transform: translateY(-50%) scale(0.98); /* Subtle press-in effect */
+    box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-btn i {
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite; /* Smooth pulse animation */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 576px) {
+    .search-input {
+        width: 180px;
+    }
+    .search-input:focus {
+        width: 210px;
+    }
+}
+
+@media (max-width: 490px) {
+    .search-input,
+    .search-btn {
+        display: none;
+    }
+}
+
+        </style>
+        <script>
+    document.querySelector('.search-btn').addEventListener('click', performSearch);
+document.querySelector('.search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action
+        performSearch(); // Call the search function
+    }
+});
+
+function performSearch() {
+    const query = document.querySelector('.search-input').value.toLowerCase().trim();
+
+    // List of all search terms mapped to HTML pages with additional keywords
+    const pages = {
+    'premium adjustable backdrop': [
+        'PremiumAdjustableBackdrop.html',
+        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop',
+        'customizable backdrop', 'photo backdrop', 'studio backdrop', 'event backdrop'
+    ],
+    'economy adjustable backdrop (imported)': [
+        'EconomyAdjustableBackdrop.html',
+        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop',
+        'lightweight backdrop', 'portable backdrop', 'durable backdrop', 'trade show backdrop'
+    ],
+    'pop up backdrop display - velcro': [
+        'PopUpBackdropDisply.html',
+        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop',
+        'portable display', 'trade show display', 'exhibition backdrop', 'easy setup backdrop'
+    ],
+    'premium wooden easel stand': [
+        'PremiumWoodenEaselStand.html',
+        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel',
+        'sturdy easel', 'adjustable easel', 'painting easel', 'professional easel'
+    ],
+    'economy wooden easel stand': [
+        'EconomyWoodenEaselStand.html',
+        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand',
+        'portable easel', 'lightweight easel', 'art stand', 'craft stand'
+    ],
+    'mini wooden easel stand': [
+        'MiniWoodenEaselStand.html',
+        'mini easel', 'small easel', 'tabletop easel', 'compact easel',
+        'decorative easel', 'miniature display', 'photo easel', 'desk easel'
+    ],
+    'ms easel stand': [
+        'MSEaselStand.html',
+        'ms easel', 'metal easel', 'easel stand', 'sturdy easel',
+        'adjustable stand', 'durable easel', 'art display stand', 'multi-purpose stand'
+    ],
+    'premium tripod easel stand': [
+        'PremiumTripodEaselStand.html',
+        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod',
+        'lightweight tripod', 'collapsible tripod', 'art tripod', 'studio easel'
+    ],
+    'zigzag brochure stand - aluminium': [
+        'ZigZagBrochureStandAluminium.html',
+        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack',
+        'foldable stand', 'literature display', 'pamphlet holder', 'trade show rack'
+    ],
+    'ms zigzag brochure stand': [
+        'MSZigZagBrochureStand.html',
+        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand',
+        'durable brochure stand', 'exhibition stand', 'portable rack', 'catalog stand'
+    ],
+    'acrylic brochure stand': [
+        'AcrylicBrochureStand.html',
+        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack',
+        'pamphlet stand', 'transparent holder', 'catalog display', 'desk brochure stand'
+    ],
+    'newspaper stand': [
+        'NewspaperStand.html',
+        'newspaper holder', 'magazine stand', 'news rack', 'press stand',
+        'periodical holder', 'news display', 'magazine rack', 'literature organizer'
+    ],
+    'sunboard stand': [
+        'SunboardStand.html',
+        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board',
+        'graphic display', 'presentation board', 'freestanding stand', 'marketing board'
+    ],
+    'double side poster stand': [
+        'DoubleSidePosterStand.html',
+        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand',
+        'dual display stand', 'promotional stand', 'poster rack', 'trade show display'
+    ],
+    'poster floor stand': [
+        'PosterFloorStand.html',
+        'poster stand', 'floor display', 'advertising stand', 'marketing stand',
+        'freestanding poster holder', 'signage stand', 'exhibition display', 'info stand'
+    ],
+    'tripod stand': [
+        'TripodStand.html',
+        'tripod', 'support stand', 'photo stand', 'camera tripod',
+        'adjustable tripod', 'portable tripod', 'sturdy stand', 'multi-purpose tripod'
+    ],
+    'corrugated pop display stand': [
+        'CorrugatedPOP.html',
+        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display',
+        'lightweight display', 'eco-friendly stand', 'retail stand', 'product display'
+    ],
+    'roll up standee': [
+        'RollUpStandee.html',
+        'roll up', 'roll up banner', 'pull-up stand', 'banner stand',
+        'portable standee', 'promotional banner', 'easy-to-carry banner', 'trade show standee'
+    ],
+    'black premium roll up standee': [
+        'BlackPremiumRollUpStandee.html',
+        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner',
+        'sleek standee', 'modern roll up', 'luxury banner', 'high-end display'
+    ],
+    'luxury roll up standee': [
+        'LuxuryRollUpStandee.html',
+        'luxury roll up', 'high-end banner', 'designer standee', 'premium display',
+        'stylish banner', 'exclusive standee', 'professional banner', 'decorative roll up'
+    ],
+    'triangle base roll up standee': [
+        'TriangleBaseRollUpStandee.html',
+        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner',
+        'geometric standee', 'durable roll up', 'secure base stand', 'modern design banner'
+    ],
+   
+    'mini roll up standee': [
+        'MiniRollUpStandee.html',
+        'mini roll up', 'compact roll up', 'small banner', 'portable stand',
+        'desktop roll up', 'lightweight banner', 'travel-friendly standee', 'tabletop display'
+    ],
+    'double side premium roll up standee': [
+        'DoubleSidePremiumRollUpStandee.html',
+        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand',
+        'dual display banner', 'luxury roll up', 'advertising stand', 'double-sided marketing stand'
+    ],
+    'double side mini roll up standee': [
+        'DoubleSideMiniRollUpStandee.html',
+        'double side mini', 'two-sided mini', 'small banner stand', 'compact display',
+        'dual tabletop banner', 'portable dual standee', 'travel-size roll up', 'miniature display stand'
+    ],
+    'x banner standee (indoor)': [
+        'XBannerStandee.html',
+        'x banner', 'cross banner', 'x-frame stand', 'indoor display',
+        'lightweight x stand', 'portable banner', 'promotional banner', 'trade show x-stand'
+    ],
+    'l banner standee (indoor)': [
+        'LBannerStandee.html',
+        'l banner', 'l-frame stand', 'indoor banner', 'display stand',
+        'compact l stand', 'lightweight l banner', 'freestanding banner', 'durable banner stand'
+    ],
+    'double banner standee (indoor)': [
+        'DoubleBannerStandee.html',
+        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner',
+        'dual marketing stand', 'freestanding double display', 'compact dual stand', 'promotional banner stand'
+    ],
+    'mini x banner standee': [
+        'minix.html',
+        'mini x banner', 'small x stand', 'compact banner', 'tabletop display',
+        'portable mini stand', 'desk x-banner', 'travel-friendly stand', 'lightweight display stand'
+    ],
+    'lama standee foldable': [
+        'lamastandee.html',
+        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand',
+        'lightweight standee', 'freestanding foldable stand', 'compact advertising stand', 'promotional display'
+    ],
+    'gazebo tent': [
+        'garebotent.html',
+        'gazebo', 'outdoor tent', 'canopy', 'event tent',
+        'portable shelter', 'exhibition tent', 'promotional tent', 'waterproof canopy'
+    ],
+    'canopy tent': [
+        'canopytent.html',
+        'canopy', 'event canopy', 'shade tent', 'outdoor shelter',
+        'promotional canopy', 'foldable tent', 'weatherproof shelter', 'trade show canopy'
+    ],
+    'promotional umbrella': [
+        'promotionalumbrella.html',
+        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella',
+        'custom printed umbrella', 'outdoor display umbrella', 'large shade umbrella', 'marketing umbrella'
+    ],
+    'promotional flags (feather/teardrop)': [
+        'promotionalflags.html',
+        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags',
+        'custom flags', 'outdoor promotional banners', 'event flags', 'branded flags'
+    ],
+    'clip on led frame': [
+        'clipsonledframe.html',
+        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame',
+        'wall-mounted frame', 'slim led display', 'bright advertising frame', 'visual display frame'
+    ],
+    'backlit fabric frame': [
+        'backlitfabric.html',
+        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame',
+        'durable fabric frame', 'modern advertising display', 'bright fabric sign', 'sleek backlit stand'
+    ],
+    'acrylic aluminium frame': [
+        'Acrylicaluminiumframe.html',
+        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame',
+        'durable frame', 'lightweight aluminium frame', 'office signage frame', 'modern design frame'
+    ],
+    'slim led frame': [
+        'slimled.html',
+        'slim frame', 'thin led frame', 'minimal frame', 'sleek display',
+        'modern frame', 'bright led display', 'decorative signage', 'low-profile led frame'
+    ],
+    'neon led lights': [
+        'neonled.html',
+        'neon lights', 'led neon sign', 'bright lights', 'decorative lights',
+        'custom neon signs', 'event neon display', 'artistic neon frame', 'vivid led lighting'
+    ],
+    'nonlit aluminium frame': [
+        'nonlitaluminium.html',
+        'nonlit frame', 'aluminium display', 'static frame', 'standard frame',
+        'durable nonlit frame', 'simple display stand', 'office display frame', 'basic aluminium signage'
+    ],
+    'garden umbrella': [
+        'gardenumbrella.html',
+        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade',
+        'large garden shade', 'decorative umbrella', 'event umbrella', 'weatherproof garden canopy'
+    ],
+    'parachute dangler': [
+        'Parachutedangler.html',
+        'dangler', 'hanging display', 'parachute banner', 'suspended display',
+        'creative dangler', 'event hanging sign', 'lightweight banner', 'advertising dangler'
+    ]
+
+};
+
+
+    // Check for matches
+    for (let [key, value] of Object.entries(pages)) {
+        // Combine all search terms for matching
+        const keywords = [key, ...value.slice(1)].map(keyword => keyword.toLowerCase());
+        if (keywords.some(keyword => keyword.includes(query))) {
+            window.location.href = value[0]; // Redirect to the corresponding page
+            return; // Exit the function once a match is found
+        }
+    }
+
+    alert('No matching page found for your search!'); // Alert if no match found
+}
+
+</script>
+    </nav>
+ 
+    
+    <!-- Navbar End -->
+    <div class="about-container">
+        <section class="hero-section">
+            <h1>About Print Grid</h1>
+            <p>At Print Grid, we specialize in providing high-quality printing services tailored to your business needs. From custom printing solutions to on-demand services, we’re here to make your ideas a reality.</p>
+        </section>
+    
+        <section class="mission-section">
+            <div class="content-box">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide premium, affordable printing services that help businesses stand out. We are committed to delivering top-notch quality with quick turnarounds, ensuring your business gets the attention it deserves.</p>
+            </div>
+            <div class="content-box">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li><strong>Quality Assurance:</strong> We use the latest technology and materials to ensure the highest print quality.</li>
+                    <li><strong>Fast Delivery:</strong> Quick turnarounds to meet your deadlines, without compromising on quality.</li>
+                    <li><strong>Affordable Pricing:</strong> Cost-effective printing solutions to match every budget.</li>
+                    <li><strong>Customer-Centric:</strong> We prioritize customer satisfaction and provide personalized solutions for each client.</li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Business Cards</h3>
+                    <p>High-quality, customized business cards to help you leave a lasting impression.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Brochures</h3>
+                    <p>Full-color brochures printed on premium paper to showcase your brand.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Flyers</h3>
+                    <p>Cost-effective flyers that spread the word about your business, promotions, and events.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Posters</h3>
+                    <p>Large format posters to grab attention and promote your business or event.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>For inquiries about our services, or to place an order, feel free to contact us today.</p>
+            <a href="mailto:info@printgrid.com" class="contact-button">Contact Us</a>
+        </section>
+    </div>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+    
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            background-color: #ffffff; /* Changed to white */
+            color: #333; /* Text color changed to dark grey */
+            padding: 50px 20px;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 4px solid #00274d; /* Keeps a professional accent color */
+        }
+    
+        .hero-section h1 {
+            font-size: 40px;
+        }
+    
+        .hero-section p {
+            font-size: 18px;
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        /* Mission Section */
+        .mission-section {
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    
+        .content-box {
+            background-color: #f9f9f9;
+            padding: 30px;
+            flex: 1 1 45%;
+            border-left: 4px solid #00274d;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+    
+        .content-box h2 {
+            font-size: 28px;
+            color: #00274d;
+            margin-bottom: 15px;
+        }
+    
+        .content-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    
+        .content-box ul li {
+            margin-bottom: 10px;
+        }
+    
+        /* Services Section */
+        .services-section {
+            margin: 40px 0;
+        }
+    
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    
+        .service-item {
+            flex: 1 1 45%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+    
+        .service-item h3 {
+            color: #00274d;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+    
+        .service-item p {
+            font-size: 16px;
+            color: #555;
+        }
+    
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background-color: #ffffff; /* Changed to white */
+            color: #333; /* Text color changed to dark grey */
+            padding: 40px 20px;
+            border-radius: 0 0 8px 8px;
+            border-top: 4px solid #00274d; /* Keeps a professional accent color */
+        }
+    
+        .contact-section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+    
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    
+        .contact-button {
+            background-color: #00274d;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .contact-button:hover {
+            background-color: #fff;
+            color: #00274d;
+            border: 2px solid #00274d;
+        }
+    
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .content-box, .service-item {
+                flex: 1 1 100%;
+            }
+    
+            .hero-section h1 {
+                font-size: 32px;
+            }
+    
+            .hero-section p {
+                font-size: 16px;
+            }
+        }
+    </style>
+    
+    
+    <!-- Footer Start -->
+    <footer class="footer-container bg-dark text-light">
+    <div class="footer-content container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5 class="footer-title">Address</h5>
+                <p class="footer-address-text"><i class="fa fa-map-marker-alt"></i> 123 Street, New York, USA</p>
+                <p class="footer-address-text"><i class="fa fa-phone-alt"></i> +012 345 67890</p>
+                <p class="footer-address-text"><i class="fa fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5 class="footer-title">Services</h5>
+                <ul class="footer-links">
+                       <li><a href="Stands.html" class="footer-link">Stands</a></li>
+                    <li><a href="standee.html" class="footer-link">Standees</a></li>
+                    <li><a href="backdrops.html" class="footer-link">BackDrops</a></li>
+                    <li><a href="moreproducts.html" class="footer-link">Other Productss</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    <li><a href="termandconditions.html" class="footer-link">Terms & Conditions</a></li>
+                    <li><a href="support.html" class="footer-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-links">
+                    <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+   /* Main footer container with gradient and glassmorphism effect */
+.footer-container {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9)), url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    padding: 4rem 1.5rem;
+    position: relative;
+}
+
+/* Container and Layout */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Typography */
+.footer-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    text-align: left;
+}
+
+.footer-title::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #007BFF, #ff007f);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Adjust the title line on smaller screens */
+@media (max-width: 490px) {
+    .footer-title {
+        text-align: center; /* Center the title */
+    }
+
+    .footer-title::after {
+        left: 50%; /* Move the line to center */
+        transform: translateX(-50%); /* Adjust the transform for center alignment */
+        width: 60px; /* Slightly smaller width for the line */
+    }
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-text i {
+    color: #007BFF;
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #007BFF;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #007BFF;
+    transform: translateX(5px);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Social Icons with 3D hover effect */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+    background-color: #007BFF;
+    transform: translateY(-5px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 490px) {
+    .footer-container {
+        padding: 3rem 1rem;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-text, .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Center-align the address-specific text */
+    .footer-address-text {
+        text-align: center;
+        margin-bottom: 0.8rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+</style>
+    
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+        <i class="bi bi-arrow-up"></i>
+      </a>
+<style>
+    .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    color: #fff;
+}
+
+.back-to-top i {
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.back-to-top {
+    animation: bounce 2s infinite;
+}
+
+</style>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PrintGrid</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a> |
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a> |
+            <span><i class="fas fa-phone-alt"></i> Call: +91 1234567890</span>
+        </div>
+        <div class="user-links">
+            <a href="#"><i class="fas fa-envelope"></i> Email Us</a>
+            <a href="support.html"><i class="fas fa-headset"></i> 24/7 Support</a>
+        </div>
+    </div>
+    <style>
+    /* General Reset */
+ 
+    /* Top Bar Styling */
+    .top-bar {
+        background: linear-gradient(135deg, #0062cc, #00509e);
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-bottom: 2px solid #004080;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .top-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        transform: skewX(-30deg);
+        animation: moveBackground 6s linear infinite;
+    }
+    
+    .top-bar a, .top-bar span {
+        color: white;
+        text-decoration: none;
+        margin: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .top-bar a:hover, .top-bar span:hover {
+        color: #b3d4ff;
+        transform: scale(1.1);
+    }
+    
+    .top-bar a i, .top-bar span i {
+        margin-right: 8px;
+        font-size: 1.1em;
+    }
+    
+    @keyframes moveBackground {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .top-bar {
+            font-size: 0.85em;
+            padding: 10px 16px;
+        }
+    }
+    
+    @media (max-width: 490px) {
+        .top-bar {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .top-bar {
+            display: flex;
+        }
+    }
+    </style>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="printgridz logo.jpg" alt="Logo" style="height: 50px;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+ 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">BackDrops</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumAdjustableBackdrop.html" class="dropdown-item">Premium Adjustable Backdrop</a>
+                        <a href="EconomyAdjustableBackdrop.html" class="dropdown-item">Economy Adjustable Backdrop (Imported)</a>
+                        <a href="PopUpBackdropDisply.html" class="dropdown-item">Pop Up Backdrop Disply - Velcro</a>
+                     </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Stand</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumWoodenEaselStand.html" class="dropdown-item">Premium Wooden Easel Stand</a>
+                        <a href="EconomyWoodenEaselStand.html" class="dropdown-item">Economy Wooden Easel Stand</a>
+                        <a href="MiniWoodenEaselStand.html" class="dropdown-item">Mini Wooden Easel Stand</a>
+                        <a href="MSEaselStand.html" class="dropdown-item">MS Easel Stand</a>
+                        <a href="PremiumTripodEaselStand.html" class="dropdown-item">Premium Tripod Easel Stand</a>
+                        <a href="ZigZagBrochureStandAluminium.html" class="dropdown-item">ZigZag Brochure Stand- Aluminium</a>
+                        <a href="MSZigZagBrochureStand.html" class="dropdown-item">MS ZigZag Brochure Stand</a>
+                        <a href="AcrylicBrochureStand.html" class="dropdown-item">Acrylic Brochure Stand</a>
+                        <a href="NewspaperStand.html" class="dropdown-item">NewsPaper Stand</a>
+                        <a href="SunboardStand.html" class="dropdown-item">Sunboard Stand</a>
+                        <a href="DoubleSidePosterStand.html" class="dropdown-item">Double Side Poster Stand</a>
+                        <a href="PosterFloorStand.html" class="dropdown-item">Poster Floor Stand</a>
+                        <a href="TripodStand.html" class="dropdown-item">Tripod Stand</a>
+                        <a href="CorrugatedPOP.html" class="dropdown-item">Corrugated POP Display Stand</a>
+
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Standees</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="RollUpStandee.html" class="dropdown-item">Roll Up Standee                        </a>
+                        <a href="BlackPremiumRollUpStandee.html" class="dropdown-item">Black Premium Roll Up Standee</a>
+                        <a href="LuxuryRollUpStandee.html" class="dropdown-item">Luxury Roll Up Standee</a>
+                        <a href="TriangleBaseRollUpStandee.html" class="dropdown-item">Triangle Base Roll Up Standee</a>
+                        <a href="MiniRollUpStandee.html" class="dropdown-item">Mini Roll Up Standee</a>
+                        <a href="DoubleSidePremiumRollUpStandee.html" class="dropdown-item">Double Side Premium Roll Up Standee</a>
+                        <a href="DoubleSideMiniRollUpStandee.html" class="dropdown-item">Double Side Mini Roll Up Standee</a>
+                        <a href="XBannerStandee.html" class="dropdown-item">X Banner Standee (Indoor)</a>
+                        <a href="LBannerStandee.html" class="dropdown-item">L Banner Standee (Indoor)</a>
+                        <a href="DoubleBannerStandee.html" class="dropdown-item">Double Banner Standee (Indoor)</a>
+                        <a href="minix.html" class="dropdown-item">Mini X Banner Standee</a>
+                        <a href="lamastandee.html" class="dropdown-item">LAMA Standee Foldable</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="garebotent.html" class="dropdown-item">Gazebo Tent</a>
+                        <a href="canopytent.html" class="dropdown-item">Canopy Tent</a>
+                        <a href="promotionalumbrella.html" class="dropdown-item">Promotional Umbrella</a>
+                        <a href="promotionalflags.html" class="dropdown-item">Promotional Flags (Feather/ Teardrop)</a>
+                        <a href="clipsonledframe.html" class="dropdown-item">Clip on LED Frame</a>
+                        <a href="backlitfabric.html" class="dropdown-item">Backlit Fabric Frame</a>
+                        <a href="Acrylicaluminiumframe.html" class="dropdown-item">Acrylic Aluminium Frame</a>
+                        <a href="slimled.html" class="dropdown-item">Slim LED Frame</a>
+                        <a href="neonled.html" class="dropdown-item">NEON LED Lights</a>
+                        <a href="nonlitaluminium.html" class="dropdown-item">Nonlit Aluminium Frame</a>
+                        <a href="gardenumbrella.html" class="dropdown-item">Garden Umbrella</a>
+                        <a href="Parachutedangler.html" class="dropdown-item">Parachute Dangler</a>
+                     </div>
+                </div>
+                  
+            </div>
+            <form class="d-flex ms-lg-3 position-relative">
+                <input class="form-control search-input" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <style>
+/* Search Bar Customization */
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    margin-right: 40px;
+    padding: 0.6rem 1.5rem;
+    width: 250px;
+    transition: width 0.4s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    color: #333;
+}
+
+.search-input:focus {
+    width: 350px;
+    outline: none;
+    border-color: #3390ec;
+    box-shadow: 0px 8px 16px rgba(0, 213, 255, 0.3);
+    background-color: #ffffff;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #106cc9;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn:hover {
+    background-color: #69aff5;
+    transform: translateY(-50%) scale(1.05); /* Slightly smooth zoom effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.search-btn:active {
+    transform: translateY(-50%) scale(0.98); /* Subtle press-in effect */
+    box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-btn i {
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite; /* Smooth pulse animation */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 576px) {
+    .search-input {
+        width: 180px;
+    }
+    .search-input:focus {
+        width: 210px;
+    }
+}
+
+@media (max-width: 490px) {
+    .search-input,
+    .search-btn {
+        display: none;
+    }
+}
+
+        </style>
+        <script>
+    document.querySelector('.search-btn').addEventListener('click', performSearch);
+document.querySelector('.search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action
+        performSearch(); // Call the search function
+    }
+});
+
+function performSearch() {
+    const query = document.querySelector('.search-input').value.toLowerCase().trim();
+
+    // List of all search terms mapped to HTML pages with additional keywords
+    const pages = {
+    'premium adjustable backdrop': [
+        'PremiumAdjustableBackdrop.html', 
+        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop'
+    ],
+    'economy adjustable backdrop (imported)': [
+        'EconomyAdjustableBackdrop.html', 
+        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop'
+    ],
+    'pop up backdrop display - velcro': [
+        'PopUpBackdropDisply.html', 
+        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop'
+    ],
+    'premium wooden easel stand': [
+        'PremiumWoodenEaselStand.html', 
+        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel'
+    ],
+    'economy wooden easel stand': [
+        'EconomyWoodenEaselStand.html', 
+        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand'
+    ],
+    'mini wooden easel stand': [
+        'MiniWoodenEaselStand.html', 
+        'mini easel', 'small easel', 'tabletop easel', 'compact easel'
+    ],
+    'ms easel stand': [
+        'MSEaselStand.html', 
+        'ms easel', 'metal easel', 'easel stand', 'sturdy easel'
+    ],
+    'premium tripod easel stand': [
+        'PremiumTripodEaselStand.html', 
+        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod'
+    ],
+    'zigzag brochure stand - aluminium': [
+        'ZigZagBrochureStandAluminium.html', 
+        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack'
+    ],
+    'ms zigzag brochure stand': [
+        'MSZigZagBrochureStand.html', 
+        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand'
+    ],
+    'acrylic brochure stand': [
+        'AcrylicBrochureStand.html', 
+        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack'
+    ],
+    'newspaper stand': [
+        'NewspaperStand.html', 
+        'newspaper holder', 'magazine stand', 'news rack', 'press stand'
+    ],
+    'sunboard stand': [
+        'SunboardStand.html', 
+        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board'
+    ],
+    'double side poster stand': [
+        'DoubleSidePosterStand.html', 
+        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand'
+    ],
+    'poster floor stand': [
+        'PosterFloorStand.html', 
+        'poster stand', 'floor display', 'advertising stand', 'marketing stand'
+    ],
+    'tripod stand': [
+        'TripodStand.html', 
+        'tripod', 'support stand', 'photo stand', 'camera tripod'
+    ],
+    'corrugated pop display stand': [
+        'CorrugatedPOP.html', 
+        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display'
+    ],
+    'roll up standee': [
+        'RollUpStandee.html', 
+        'roll up', 'roll up banner', 'pull-up stand', 'banner stand'
+    ],
+    'black premium roll up standee': [
+        'BlackPremiumRollUpStandee.html', 
+        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner'
+    ],
+    'luxury roll up standee': [
+        'LuxuryRollUpStandee.html', 
+        'luxury roll up', 'high-end banner', 'designer standee', 'premium display'
+    ],
+    'triangle base roll up standee': [
+        'TriangleBaseRollUpStandee.html', 
+        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner'
+    ],
+    'mini roll up standee': [
+        'MiniRollUpStandee.html', 
+        'mini roll up', 'compact roll up', 'small banner', 'portable stand'
+    ],
+    'double side premium roll up standee': [
+        'DoubleSidePremiumRollUpStandee.html', 
+        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand'
+    ],
+    'double side mini roll up standee': [
+        'DoubleSideMiniRollUpStandee.html', 
+        'double side mini', 'two-sided mini', 'small banner stand', 'compact display'
+    ],
+    'x banner standee (indoor)': [
+        'XBannerStandee.html', 
+        'x banner', 'cross banner', 'x-frame stand', 'indoor display'
+    ],
+    'l banner standee (indoor)': [
+        'LBannerStandee.html', 
+        'l banner', 'l-frame stand', 'indoor banner', 'display stand'
+    ],
+    'double banner standee (indoor)': [
+        'DoubleBannerStandee.html', 
+        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner'
+    ],
+    'mini x banner standee': [
+        'minix.html', 
+        'mini x banner', 'small x stand', 'compact banner', 'tabletop display'
+    ],
+    'lama standee foldable': [
+        'lamastandee.html', 
+        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand'
+    ],
+    'gazebo tent': [
+        'garebotent.html', 
+        'gazebo', 'outdoor tent', 'canopy', 'event tent'
+    ],
+    'canopy tent': [
+        'canopytent.html', 
+        'canopy', 'event canopy', 'shade tent', 'outdoor shelter'
+    ],
+    'promotional umbrella': [
+        'promotionalumbrella.html', 
+        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella'
+    ],
+    'promotional flags (feather/teardrop)': [
+        'promotionalflags.html', 
+        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags'
+    ],
+    'clip on led frame': [
+        'clipsonledframe.html', 
+        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame'
+    ],
+    'backlit fabric frame': [
+        'backlitfabric.html', 
+        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame'
+    ],
+    'acrylic aluminium frame': [
+        'Acrylicaluminiumframe.html', 
+        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame'
+    ],
+    'slim led frame': [
+        'slimled.html', 
+        'slim frame', 'thin led frame', 'minimal frame', 'sleek display'
+    ],
+    'neon led lights': [
+        'neonled.html', 
+        'neon lights', 'led neon sign', 'bright lights', 'decorative lights'
+    ],
+    'nonlit aluminium frame': [
+        'nonlitaluminium.html', 
+        'nonlit frame', 'aluminium display', 'static frame', 'standard frame'
+    ],
+    'garden umbrella': [
+        'gardenumbrella.html', 
+        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade'
+    ],
+    'parachute dangler': [
+        'Parachutedangler.html', 
+        'dangler', 'hanging display', 'parachute banner', 'suspended display'
+    ],
+};
+
+
+    // Check for matches
+    for (let [key, value] of Object.entries(pages)) {
+        // Combine all search terms for matching
+        const keywords = [key, ...value.slice(1)].map(keyword => keyword.toLowerCase());
+        if (keywords.some(keyword => keyword.includes(query))) {
+            window.location.href = value[0]; // Redirect to the corresponding page
+            return; // Exit the function once a match is found
+        }
+    }
+
+    alert('No matching page found for your search!'); // Alert if no match found
+}
+
+</script>
+    </nav>
+ 
+    
+    <!-- Navbar End -->
+    <div class="main-container">
+        <div class="information-panel">
+            <h1>Mini Roll Up Standee</h1>
+            <img src="miniroll.png" alt="Mini Roll Up Standee" style="height: 490px;">
+            <div class="tab-buttons">
+                <button class="tab-button active-button" onclick="switchTabContent('details-section')">Details</button>
+                <button class="tab-button" onclick="switchTabContent('features-section')">Features</button>
+            </div>
+            <div class="tab-content" id="details-section">
+                <p>Enhance your business's image with our premium-quality roll-up standees. Featuring durable materials and a flawless finish, these standees are perfect for making a sophisticated statement.</p>
+            </div>
+            <div class="tab-content" id="features-section" style="display: none;">
+                <h3>Features</h3>
+                <ul>
+                    <li>Lightweight and portable design</li>
+                    <li>Easy to set up and take down</li>
+                    <li>Vibrant color printing for eye-catching displays</li>
+                    <li>Durable materials for long-lasting use</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="order-section">
+            <form class="price-calculator-form">
+                <label for="size-selector">Size</label>
+                <select id="size-selector">
+                    <option>90 x 55mm</option>
+                    <option>85 x 54mm</option>
+                </select>
+                <label for="quantity-selector">Quantity</label>
+                <select id="quantity-selector" onchange="calculateTotalPrice()">
+                    <option value="250" data-price="9000">250</option>
+                    <option value="500" data-price="15000">500</option>
+                    <option value="1000" data-price="25000">1000</option>
+                </select>
+                <label for="material-selector">Material</label>
+                <select id="material-selector">
+                    <option>350gsm Gloss Art Board</option>
+                    <option>400gsm Matt Board</option>
+                </select>
+                <label for="print-side-selector">Printed Sides</label>
+                <select id="print-side-selector">
+                    <option>Front Only</option>
+                    <option>Front and Back</option>
+                </select>
+                <label for="lamination-selector">Lamination</label>
+                <select id="lamination-selector">
+                    <option>None</option>
+                    <option>Gloss</option>
+                    <option>Matt</option>
+                </select>
+                <label for="corner-style-selector">Corners</label>
+                <select id="corner-style-selector">
+                    <option>Square</option>
+                    <option>Rounded</option>
+                </select>
+                <label for="designer-selector">Hire Designer</label>
+                <select id="designer-selector">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+                <div class="total-cost-display">Total (Incl GST): ₹<span class="cost-value">9000.00</span></div>
+                <div>Unit Price: ₹<span id="unit-price-display">36.00</span></div>
+                <button type="button" class="update-price-button" onclick="calculateTotalPrice()">Update Price</button>
+            </form>
+        </div>
+    </div>
+   
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 5px 10px 30px rgba(8, 8, 8, 0.1);
+    display: flex;
+    gap: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.information-panel, .order-section {
+    border-radius: 12px;
+    flex: 1;
+    min-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.information-panel {
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items within the information panel */
+}
+
+.information-panel img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.information-panel img:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 45px;
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    color: #0d47a1;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #1a237e;
+    background-color: #e3f2fd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active-button, .tab-button:hover {
+    background-color: #1a237e;
+    color: #fff;
+}
+
+.tab-content {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.order-section {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.price-calculator-form label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.price-calculator-form select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #e3f2fd;
+    color: #1a237e;
+}
+
+.total-cost-display, .cost-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a237e;
+    margin-top: 15px;
+}
+
+.cost-value {
+    font-weight: bold;
+}
+
+.update-price-button {
+    background-color: #1a237e;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.update-price-button:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.design-upload-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 490px) {
+    .main-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .information-panel {
+        align-items: center; /* Center the contents of information panel on small screens */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+    </style>
+    
+    <script>
+        function calculateTotalPrice() {
+            const quantitySelector = document.getElementById('quantity-selector');
+            const selectedOption = quantitySelector.options[quantitySelector.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+    
+            document.querySelector('.cost-value').textContent = `${(parseFloat(price)).toFixed(2)}`;
+            
+            const unitPrice = (price / quantitySelector.value).toFixed(2);
+            document.getElementById('unit-price-display').textContent = unitPrice;
+        }
+    
+        function switchTabContent(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active-button'));
+            event.target.classList.add('active-button');
+        }
+    </script>
+    
+    <div class="service-section">
+        <div class="service-item">
+            <i class="fa fa-clock" aria-hidden="true"></i>
+            <h3>Quick Turnaround</h3>
+            <p>Do you need your print job quicker than normal turnaround times? We offer an ability to jump the queue for most of the products for a small fee. Call our customer service team on <strong>02 9890 8898</strong> to discuss your needs.</p>
+        </div>
+        <div class="service-item">
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
+            <h3>Custom Quote</h3>
+            <p>We can print almost all products to your custom specifications. If you require something different than what you see on our website, e.g., print size, quantity, or stock, <a href="#">click here to request a custom quote.</a></p>
+        </div>
+    </div>
+    
+    <style>
+    
+        .service-section {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for multiple items */
+            justify-content: center; /* Center align boxes */
+            padding: 20px; /* Padding around the section */
+            max-width: 1200px; /* Max width for the section */
+            margin: auto; /* Center the section */
+        }
+    
+        .service-item {
+            background-color: #ffffff; /* White background for each item */
+            border-radius: 15px; /* Rounded corners for the items */
+            width: 500px; /* Fixed width for square boxes */
+            height: 320px; /* Fixed height for square boxes */
+            margin: 15px; /* Margin for spacing */
+            padding: 20px; /* Padding for internal spacing */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center align items */
+            justify-content: center; /* Center content vertically */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow for items */
+            text-align: center; /* Center text */
+        }
+    
+        .service-item:hover {
+            transform: scale(1.0); /* Slightly enlarge the box on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+    
+        .service-item i {
+            font-size: 40px; /* Larger icon size */
+            margin-bottom: 15px; /* Space below the icon */
+            color: #007BFF; /* Icon color */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+    
+        .service-item:hover i {
+            color: #0056b3; /* Darken icon color on hover */
+        }
+    
+        .service-item h3 {
+            margin: 10px 0; /* Spacing around the heading */
+            font-size: 22px; /* Larger heading size */
+            color: #333;
+        }
+    
+        .service-item p {
+            margin: 0; /* No margin for paragraph */
+            color: #555;
+            font-size: 17px; /* Font size for the paragraph */
+        }
+    
+        .service-item a {
+            color: #007BFF; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold links */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+    
+        .service-item a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #0056b3; /* Darken link color on hover */
+        }
+    
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-item {
+                width: calc(50% - 30px); /* Adjust for smaller screens */
+                height: auto; /* Allow height to adjust */
+            }
+        }
+    
+        @media (max-width: 490px) {
+            .service-item {
+                width: calc(100% - 30px); /* Full width on very small screens */
+                height: auto; /* Allow height to adjust */
+            }
+        }
+    </style>
+    
+    <!-- Footer Start -->
+    <footer class="footer-container bg-dark text-light">
+    <div class="footer-content container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5 class="footer-title">Address</h5>
+                <p class="footer-address-text"><i class="fa fa-map-marker-alt"></i> 123 Street, New York, USA</p>
+                <p class="footer-address-text"><i class="fa fa-phone-alt"></i> +012 345 67890</p>
+                <p class="footer-address-text"><i class="fa fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5 class="footer-title">Services</h5>
+                <ul class="footer-links">
+                        <li><a href="Stands.html" class="footer-link">Stands</a></li>
+                        <li><a href="standee.html" class="footer-link">Standees</a></li>
+                        <li><a href="backdrops.html" class="footer-link">BackDrops</a></li>
+                        <li><a href="moreproducts.html" class="footer-link">Other Productss</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    <li><a href="termandconditions.html" class="footer-link">Terms & Conditions</a></li>
+                    <li><a href="support.html" class="footer-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-links">
+                    <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+   /* Main footer container with gradient and glassmorphism effect */
+.footer-container {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9)), url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    padding: 4rem 1.5rem;
+    position: relative;
+}
+
+/* Container and Layout */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Typography */
+.footer-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    text-align: left;
+}
+
+.footer-title::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #007BFF, #ff007f);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Adjust the title line on smaller screens */
+@media (max-width: 490px) {
+    .footer-title {
+        text-align: center; /* Center the title */
+    }
+
+    .footer-title::after {
+        left: 50%; /* Move the line to center */
+        transform: translateX(-50%); /* Adjust the transform for center alignment */
+        width: 60px; /* Slightly smaller width for the line */
+    }
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-text i {
+    color: #007BFF;
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #007BFF;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #007BFF;
+    transform: translateX(5px);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Social Icons with 3D hover effect */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+    background-color: #007BFF;
+    transform: translateY(-5px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 490px) {
+    .footer-container {
+        padding: 3rem 1rem;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-text, .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Center-align the address-specific text */
+    .footer-address-text {
+        text-align: center;
+        margin-bottom: 0.8rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+</style>
+    
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+        <i class="bi bi-arrow-up"></i>
+      </a>
+<style>
+    .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    color: #fff;
+}
+
+.back-to-top i {
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.back-to-top {
+    animation: bounce 2s infinite;
+}
+
+</style>   
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

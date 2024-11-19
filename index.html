@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PrintGrid</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a> |
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a> |
+            <span><i class="fas fa-phone-alt"></i> Call: +91 1234567890</span>
+        </div>
+        <div class="user-links">
+            <span><i class="fas fa-envelope"></i> Email: rohankumarchaudhry5859@gmail.com</span>
+            <a href="support.html"><i class="fas fa-headset"></i> 24/7 Support</a>
+        </div>
+    </div>
+    <style>
+    /* General Reset */
+ 
+    /* Top Bar Styling */
+    .top-bar {
+        background: linear-gradient(135deg, #0062cc, #00509e);
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-bottom: 2px solid #004080;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .top-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        transform: skewX(-30deg);
+        animation: moveBackground 6s linear infinite;
+    }
+    
+    .top-bar a, .top-bar span {
+        color: white;
+        text-decoration: none;
+        margin: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .top-bar a:hover, .top-bar span:hover {
+        color: #b3d4ff;
+        transform: scale(1.1);
+    }
+    
+    .top-bar a i, .top-bar span i {
+        margin-right: 8px;
+        font-size: 1.1em;
+    }
+    
+    @keyframes moveBackground {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .top-bar {
+            font-size: 0.85em;
+            padding: 10px 16px;
+        }
+    }
+    
+    @media (max-width: 490px) {
+        .top-bar {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .top-bar {
+            display: flex;
+        }
+    }
+    </style>
+    
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="printgridz logo.jpg" alt="Logo" style="height: 50px;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">BackDrops</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumAdjustableBackdrop.html" class="dropdown-item">Premium Adjustable Backdrop</a>
+                        <a href="EconomyAdjustableBackdrop.html" class="dropdown-item">Economy Adjustable Backdrop (Imported)</a>
+                        <a href="PopUpBackdropDisply.html" class="dropdown-item">Pop Up Backdrop Disply - Velcro</a>
+                     </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Stand</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="PremiumWoodenEaselStand.html" class="dropdown-item">Premium Wooden Easel Stand</a>
+                        <a href="EconomyWoodenEaselStand.html" class="dropdown-item">Economy Wooden Easel Stand</a>
+                        <a href="MiniWoodenEaselStand.html" class="dropdown-item">Mini Wooden Easel Stand</a>
+                        <a href="MSEaselStand.html" class="dropdown-item">MS Easel Stand</a>
+                        <a href="PremiumTripodEaselStand.html" class="dropdown-item">Premium Tripod Easel Stand</a>
+                        <a href="ZigZagBrochureStandAluminium.html" class="dropdown-item">ZigZag Brochure Stand- Aluminium</a>
+                        <a href="MSZigZagBrochureStand.html" class="dropdown-item">MS ZigZag Brochure Stand</a>
+                        <a href="AcrylicBrochureStand.html" class="dropdown-item">Acrylic Brochure Stand</a>
+                        <a href="NewspaperStand.html" class="dropdown-item">NewsPaper Stand</a>
+                        <a href="SunboardStand.html" class="dropdown-item">Sunboard Stand</a>
+                        <a href="DoubleSidePosterStand.html" class="dropdown-item">Double Side Poster Stand</a>
+                        <a href="PosterFloorStand.html" class="dropdown-item">Poster Floor Stand</a>
+                        <a href="TripodStand.html" class="dropdown-item">Tripod Stand</a>
+                        <a href="CorrugatedPOP.html" class="dropdown-item">Corrugated POP Display Stand</a>
+
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Standees</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="RollUpStandee.html" class="dropdown-item">Roll Up Standee                        </a>
+                        <a href="BlackPremiumRollUpStandee.html" class="dropdown-item">Black Premium Roll Up Standee</a>
+                        <a href="LuxuryRollUpStandee.html" class="dropdown-item">Luxury Roll Up Standee</a>
+                        <a href="TriangleBaseRollUpStandee.html" class="dropdown-item">Triangle Base Roll Up Standee</a>
+                        <a href="MiniRollUpStandee.html" class="dropdown-item">Mini Roll Up Standee</a>
+                        <a href="DoubleSidePremiumRollUpStandee.html" class="dropdown-item">Double Side Premium Roll Up Standee</a>
+                        <a href="DoubleSideMiniRollUpStandee.html" class="dropdown-item">Double Side Mini Roll Up Standee</a>
+                        <a href="XBannerStandee.html" class="dropdown-item">X Banner Standee (Indoor)</a>
+                        <a href="LBannerStandee.html" class="dropdown-item">L Banner Standee (Indoor)</a>
+                        <a href="DoubleBannerStandee.html" class="dropdown-item">Double Banner Standee (Indoor)</a>
+                        <a href="minix.html" class="dropdown-item">Mini X Banner Standee</a>
+                        <a href="lamastandee.html" class="dropdown-item">LAMA Standee Foldable</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="garebotent.html" class="dropdown-item">Gazebo Tent</a>
+                        <a href="canopytent.html" class="dropdown-item">Canopy Tent</a>
+                        <a href="promotionalumbrella.html" class="dropdown-item">Promotional Umbrella</a>
+                        <a href="promotionalflags.html" class="dropdown-item">Promotional Flags (Feather/ Teardrop)</a>
+                        <a href="clipsonledframe.html" class="dropdown-item">Clip on LED Frame</a>
+                        <a href="backlitfabric.html" class="dropdown-item">Backlit Fabric Frame</a>
+                        <a href="Acrylicaluminiumframe.html" class="dropdown-item">Acrylic Aluminium Frame</a>
+                        <a href="slimled.html" class="dropdown-item">Slim LED Frame</a>
+                        <a href="neonled.html" class="dropdown-item">NEON LED Lights</a>
+                        <a href="nonlitaluminium.html" class="dropdown-item">Nonlit Aluminium Frame</a>
+                        <a href="gardenumbrella.html" class="dropdown-item">Garden Umbrella</a>
+                        <a href="Parachutedangler.html" class="dropdown-item">Parachute Dangler</a>
+                     </div>
+                </div>
+            </div>
+        
+            <!-- Modern Search Bar -->
+            <form class="d-flex ms-lg-3 position-relative">
+                <input class="form-control search-input" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <style>
+/* Search Bar Customization */
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    margin-right: 40px;
+    padding: 0.6rem 1.5rem;
+    width: 250px;
+    transition: width 0.4s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    color: #333;
+}
+
+.search-input:focus {
+    width: 350px;
+    outline: none;
+    border-color: #3390ec;
+    box-shadow: 0px 8px 16px rgba(0, 213, 255, 0.3);
+    background-color: #ffffff;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #106cc9;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn:hover {
+    background-color: #69aff5;
+    transform: translateY(-50%) scale(1.05); /* Slightly smooth zoom effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.search-btn:active {
+    transform: translateY(-50%) scale(0.98); /* Subtle press-in effect */
+    box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-btn i {
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite; /* Smooth pulse animation */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 576px) {
+    .search-input {
+        width: 180px;
+    }
+    .search-input:focus {
+        width: 210px;
+    }
+}
+
+@media (max-width: 490px) {
+    .search-input,
+    .search-btn {
+        display: none;
+    }
+}
+
+        </style>
+        <script>
+    document.querySelector('.search-btn').addEventListener('click', performSearch);
+document.querySelector('.search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action
+        performSearch(); // Call the search function
+    }
+});
+
+function performSearch() {
+    const query = document.querySelector('.search-input').value.toLowerCase().trim();
+
+    // List of all search terms mapped to HTML pages with additional keywords
+    const pages = {
+    'premium adjustable backdrop': [
+        'PremiumAdjustableBackdrop.html', 
+        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop'
+    ],
+    'economy adjustable backdrop (imported)': [
+        'EconomyAdjustableBackdrop.html', 
+        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop'
+    ],
+    'pop up backdrop display - velcro': [
+        'PopUpBackdropDisply.html', 
+        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop'
+    ],
+    'premium wooden easel stand': [
+        'PremiumWoodenEaselStand.html', 
+        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel'
+    ],
+    'economy wooden easel stand': [
+        'EconomyWoodenEaselStand.html', 
+        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand'
+    ],
+    'mini wooden easel stand': [
+        'MiniWoodenEaselStand.html', 
+        'mini easel', 'small easel', 'tabletop easel', 'compact easel'
+    ],
+    'ms easel stand': [
+        'MSEaselStand.html', 
+        'ms easel', 'metal easel', 'easel stand', 'sturdy easel'
+    ],
+    'premium tripod easel stand': [
+        'PremiumTripodEaselStand.html', 
+        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod'
+    ],
+    'zigzag brochure stand - aluminium': [
+        'ZigZagBrochureStandAluminium.html', 
+        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack'
+    ],
+    'ms zigzag brochure stand': [
+        'MSZigZagBrochureStand.html', 
+        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand'
+    ],
+    'acrylic brochure stand': [
+        'AcrylicBrochureStand.html', 
+        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack'
+    ],
+    'newspaper stand': [
+        'NewspaperStand.html', 
+        'newspaper holder', 'magazine stand', 'news rack', 'press stand'
+    ],
+    'sunboard stand': [
+        'SunboardStand.html', 
+        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board'
+    ],
+    'double side poster stand': [
+        'DoubleSidePosterStand.html', 
+        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand'
+    ],
+    'poster floor stand': [
+        'PosterFloorStand.html', 
+        'poster stand', 'floor display', 'advertising stand', 'marketing stand'
+    ],
+    'tripod stand': [
+        'TripodStand.html', 
+        'tripod', 'support stand', 'photo stand', 'camera tripod'
+    ],
+    'corrugated pop display stand': [
+        'CorrugatedPOP.html', 
+        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display'
+    ],
+    'roll up standee': [
+        'RollUpStandee.html', 
+        'roll up', 'roll up banner', 'pull-up stand', 'banner stand'
+    ],
+    'black premium roll up standee': [
+        'BlackPremiumRollUpStandee.html', 
+        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner'
+    ],
+    'luxury roll up standee': [
+        'LuxuryRollUpStandee.html', 
+        'luxury roll up', 'high-end banner', 'designer standee', 'premium display'
+    ],
+    'triangle base roll up standee': [
+        'TriangleBaseRollUpStandee.html', 
+        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner'
+    ],
+    'mini roll up standee': [
+        'MiniRollUpStandee.html', 
+        'mini roll up', 'compact roll up', 'small banner', 'portable stand'
+    ],
+    'double side premium roll up standee': [
+        'DoubleSidePremiumRollUpStandee.html', 
+        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand'
+    ],
+    'double side mini roll up standee': [
+        'DoubleSideMiniRollUpStandee.html', 
+        'double side mini', 'two-sided mini', 'small banner stand', 'compact display'
+    ],
+    'x banner standee (indoor)': [
+        'XBannerStandee.html', 
+        'x banner', 'cross banner', 'x-frame stand', 'indoor display'
+    ],
+    'l banner standee (indoor)': [
+        'LBannerStandee.html', 
+        'l banner', 'l-frame stand', 'indoor banner', 'display stand'
+    ],
+    'double banner standee (indoor)': [
+        'DoubleBannerStandee.html', 
+        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner'
+    ],
+    'mini x banner standee': [
+        'minix.html', 
+        'mini x banner', 'small x stand', 'compact banner', 'tabletop display'
+    ],
+    'lama standee foldable': [
+        'lamastandee.html', 
+        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand'
+    ],
+    'gazebo tent': [
+        'garebotent.html', 
+        'gazebo', 'outdoor tent', 'canopy', 'event tent'
+    ],
+    'canopy tent': [
+        'canopytent.html', 
+        'canopy', 'event canopy', 'shade tent', 'outdoor shelter'
+    ],
+    'promotional umbrella': [
+        'promotionalumbrella.html', 
+        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella'
+    ],
+    'promotional flags (feather/teardrop)': [
+        'promotionalflags.html', 
+        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags'
+    ],
+    'clip on led frame': [
+        'clipsonledframe.html', 
+        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame'
+    ],
+    'backlit fabric frame': [
+        'backlitfabric.html', 
+        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame'
+    ],
+    'acrylic aluminium frame': [
+        'Acrylicaluminiumframe.html', 
+        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame'
+    ],
+    'slim led frame': [
+        'slimled.html', 
+        'slim frame', 'thin led frame', 'minimal frame', 'sleek display'
+    ],
+    'neon led lights': [
+        'neonled.html', 
+        'neon lights', 'led neon sign', 'bright lights', 'decorative lights'
+    ],
+    'nonlit aluminium frame': [
+        'nonlitaluminium.html', 
+        'nonlit frame', 'aluminium display', 'static frame', 'standard frame'
+    ],
+    'garden umbrella': [
+        'gardenumbrella.html', 
+        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade'
+    ],
+    'parachute dangler': [
+        'Parachutedangler.html', 
+        'dangler', 'hanging display', 'parachute banner', 'suspended display'
+    ],
+};
+
+
+    // Check for matches
+    for (let [key, value] of Object.entries(pages)) {
+        // Combine all search terms for matching
+        const keywords = [key, ...value.slice(1)].map(keyword => keyword.toLowerCase());
+        if (keywords.some(keyword => keyword.includes(query))) {
+            window.location.href = value[0]; // Redirect to the corresponding page
+            return; // Exit the function once a match is found
+        }
+    }
+
+    alert('No matching page found for your search!'); // Alert if no match found
+}
+
+</script>
+    </nav>
+    <!-- Navbar End -->
+    <section class="hero-section" id="hero">
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <img src="desktop_tiny.png" alt="Design Studio" class="hero-image">
+                <div class="hero-text">
+                    <h1>Design Studio</h1>
+                    <p>Easy-To-Use Online Designer</p>
+                    <p>Create and save your designs from a vast template library</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    /* Hero Section Styling */
+    .hero-section {
+        background-color: #f0f0f5;
+        padding: 60px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 75vh;
+        overflow: hidden;
+    }
+    
+    .hero-wrapper {
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        opacity: 0;
+        transform: translateY(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .hero-image {
+        max-width: 70%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+    
+    .hero-text {
+        max-width: 55%;
+        color: #000000;
+    }
+    
+    .hero-text h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .hero-text p {
+        font-size: 1.8rem;
+        margin: 10px 0;
+    }
+    
+    /* Hover Animation */
+    .hero-image:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+    
+        .hero-image {
+            max-width: 80%;
+        }
+    
+        .hero-text {
+            max-width: 100%;
+        }
+    
+        .hero-text h1 {
+            font-size: 2.8rem;
+        }
+    
+        .hero-text p {
+            font-size: 1.1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-text h1 {
+            font-size: 3.7rem;
+        }
+    
+        .hero-text p {
+            font-size: 1.4rem;
+        }
+    }
+    
+    /* Animation Class */
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.getElementById("hero");
+        const heroContent = document.querySelector(".hero-content");
+    
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroContent.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+    
+        observer.observe(hero);
+    });
+    </script>
+    
+   <style>
+/* General container styling */
+.product-section {
+    max-width: 100%;
+    padding: 20px 10px; /* Reduced padding */
+    text-align: center;
+    background-color: #f3f4f6;
+    background-image: linear-gradient(135deg, #f9fafb 25%, #ffffff 100%);
+    border-radius: 10px; /* Slightly reduced border radius */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+.product-section h2 {
+    color: #1B2C51;
+    margin-top: 30px;
+    font-size: 3.0em; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    animation: fadeInTitle 0.8s ease-in-out;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px; /* Reduced padding */
+}
+
+.product-section h2:hover {
+    color: #1d4ed8; /* Change color on hover */
+}
+
+.product-section h2::after {
+    content: '';
+    width: 50px; /* Reduced underline width */
+    height: 3px;
+    background-color: #1d4ed8;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Grid layout for products */
+.products-grid {
+    display: grid;
+    gap: 15px; /* Tightened grid gap */
+    padding: 0 3%;
+}
+
+/* Product box styling */
+.product-item {
+    background-color: #ffffff;
+    padding: 10px; /* Reduced padding */
+    border-radius: 12px; /* Reduced border radius */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Slightly faster transition */
+    cursor: pointer;
+    min-height: 150px; /* Reduced minimum height */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.product-item::before {
+    content: '';
+    position: absolute;
+    top: -60%; /* Adjusted position */
+    left: -60%;
+    width: 180%;
+    height: 180%;
+    background-color: rgba(29, 78, 216, 0.05); /* Lighter background effect */
+    border-radius: 50%;
+    transition: transform 0.4s ease; /* Reduced transition duration */
+    z-index: -1;
+}
+
+.product-item:hover::before {
+    transform: scale(1.1); /* Reduced scale on hover */
+}
+
+.product-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Reduced translation and scale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Lighter shadow on hover */
+}
+
+.product-item:hover i {
+    color: #1d4ed8;
+    animation: pulseIcon 1s ease infinite; /* Slightly shorter pulse duration */
+}
+
+/* Product icon and text styling */
+.product-item i {
+    font-size: 40px; /* Reduced icon size */
+    color: #2563eb;
+    margin-bottom: 8px; /* Reduced margin */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item:hover i {
+    transform: scale(1.1); /* Slightly reduced hover scale */
+}
+
+.product-item p {
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.95em; /* Slightly smaller text size */
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+}
+
+/* Responsive grid layout for different screen sizes */
+@media (min-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(6, 1fr); /* 6 columns for large screens */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 491px) and (max-width: 767px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 490px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+        gap: 10px; /* Adjust grid gap to ensure proper spacing */
+    }
+
+    .product-item {
+        min-height: 120px; /* Adjust height for smaller screens */
+    }
+}
+
+
+/* Title fade-in animation */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Icon pulse animation on hover */
+@keyframes pulseIcon {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Reduced scale */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Button hover bounce animation */
+@keyframes bounceHover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px); /* Reduced bounce height */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+<div class="product-section">
+    <h2>Our Popular Products</h2>
+    <div class="products-grid">
+        <div class="product-item">
+            <i class="fas fa-bullhorn"></i>
+            <p>Roll Up Standee</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-clipboard"></i>
+            <p>Sunboard Sheet</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-align-justify"></i>
+            <p>Foam Sheet</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-th-large"></i>
+            <p>ACP Sheet</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-image"></i>
+            <p>Vinyl Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-eye"></i>
+            <p>One Way Vision</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-print"></i>
+            <p>Flex Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-lightbulb"></i>
+            <p>Backlit Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-glass-martini"></i>
+            <p>Translit Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-scroll"></i>
+            <p>Satin Fabric Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-flag"></i>
+            <p>Cloth Banner</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-paint-brush"></i>
+            <p>Canvas Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-glass-cheers"></i>
+            <p>Glass Film Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-snowflake"></i>
+            <p>Frosted Film Printing</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-sticky-note"></i>
+            <p>Radium Sticker</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-sign"></i>
+            <p>Glow Sign Board</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-lightbulb"></i>
+            <p>LED Sign Board</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-square"></i>
+            <p>Acrylic Sign Board</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-font"></i>
+            <p>Metal Letter Sign</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-tree"></i>
+            <p>Wooden Sign Board</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-box"></i>
+            <p>LED ACP Box</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-sticky-note"></i>
+            <p>Vinyl with Lamination</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-sticky-note"></i>
+            <p>Vinyl without Lamination</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-lightbulb"></i>
+            <p>Reflective Radium</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-align-center"></i>
+            <p>X Stand Banner</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-align-left"></i>
+            <p>L Banner Stand</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-archway"></i>
+            <p>Spider Standee</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-table"></i>
+            <p>Table Top Standee</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-clipboard"></i>
+            <p>Table Tent Cards</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-image"></i>
+            <p>Posters</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-book"></i>
+            <p>Brochures</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-paper-plane"></i>
+            <p>Flyers</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-id-card"></i>
+            <p>Business Cards</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-id-badge"></i>
+            <p>ID Cards</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-award"></i>
+            <p>Certificates</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-file-invoice"></i>
+            <p>Bill Books</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-file-alt"></i>
+            <p>Letterheads</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-envelope"></i>
+            <p>Envelopes</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-book"></i>
+            <p>Diaries</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-book"></i>
+            <p>Booklet</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-copy"></i>
+            <p>Carbonless NCR Books</p>
+        </div>
+        <div class="product-item">
+            <i class="fas fa-folder-open"></i>
+            <p>Presentation Folders</p>
+        </div>
+        
+    </div>
+</div>
+<section class="marketing-material">
+    <div class="image">
+        <img src="product1.png" alt="Marketing Material Image" />
+    </div>
+    <div class="content">
+        <h1>Marketing Material</h1>
+        <p class="description">Brochures, Flyers, Magazine Booklets, Stickers</p>
+        <button class="learn-more" onclick="window.location.href='standee.html'">View More &#8594;</button>
+    </div>
+</section>
+
+<style>
+    /* General container styling */
+    .marketing-material {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        max-width: 100%;
+        margin: 30px auto;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .marketing-material:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Content section styling */
+    .content {
+        flex: 1;
+        max-width: 550px;
+        text-align: left;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .content h1 {
+        font-size: 45px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .content p {
+        font-size: 29px; /* Increased text size */
+        color: #007BFF; /* Change to a brighter color */
+        line-height: 1.6;
+        margin-bottom: 25px;
+        font-family: 'Arial', sans-serif;
+        font-weight: 100; /* Make it bolder for emphasis */
+    }
+
+    .view-more {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .view-more:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+    }
+
+    /* Image section styling */
+    .image {
+        flex: 1;
+        max-width: 450px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .marketing-material:hover .image img {
+        transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .marketing-material {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .content, .image {
+            max-width: 100%;
+            padding: 10px;
+        }
+
+        .content h1 {
+            font-size: 28px;
+        }
+
+        .content p {
+            font-size: 18px; /* Adjusted for smaller screens */
+        }
+
+        .view-more {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 490px) {
+        .content h1 {
+            font-size: 24px;
+        }
+
+        .content p {
+            font-size: 16px; /* Adjusted for smaller screens */
+        }
+
+        .view-more {
+            padding: 8px 18px;
+            font-size: 13px;
+        }
+    }
+</style>
+<section class="promo-material">
+    <div class="image-container">
+        <img src="product2.png" alt="Promo Material Image" />
+    </div>
+    <div class="promo-text"> <!-- Updated class name -->
+        <h1>Promo Material</h1>
+        <p class="details">Brochures, Flyers, Magazine Booklets, Stickers</p>
+        <button class="learn-more" onclick="window.location.href='Stands.html'">View More &#8594;</button>
+
+    </div>
+</section>
+
+
+<style>
+ /* General container styling */
+.promo-material {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    max-width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Change flex direction to row-reverse to place the image on the right */
+.promo-material {
+    flex-direction: row-reverse;
+}
+
+.promo-material:hover {
+    transform: translateY(-5px);
+}
+
+/* Content section styling */
+.promo-text { /* Updated class name */
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.promo-text h1 { /* Updated class name */
+    font-size: 45px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+.promo-text p { /* Updated class name */
+    font-size: 29px; /* Increased text size */
+    color: #007BFF; /* Change to a brighter color */
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 100; /* Make it bolder for emphasis */
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Image section styling */
+.image-container {
+    flex: 1;
+    max-width: 550px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.promo-material:hover .image-container img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .promo-material {
+        flex-direction: column; /* Stack items on small screens */
+        padding: 20px;
+    }
+
+    .promo-text, .image-container { /* Updated class name */
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .promo-text h1 { /* Updated class name */
+        font-size: 28px;
+    }
+
+    .promo-text p { /* Updated class name */
+        font-size: 18px; /* Adjusted for smaller screens */
+    }
+
+    .learn-more {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 490px) {
+    .promo-text h1 { /* Updated class name */
+        font-size: 24px;
+    }
+
+    .promo-text p { /* Updated class name */
+        font-size: 16px; /* Adjusted for smaller screens */
+    }
+
+    .learn-more {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+}
+
+</style><div class="product-section">
+    <h2>Brower: Our Trending Products</h2>
+
+</div>
+<div class="product-section">
+    <!-- Product 1 -->
+    <div class="product">
+        <div class="product-title">Books and Magazines</div> <!-- Static Title -->
+        <div class="product-inner">
+            <div class="product-front">
+                <div class="image-container">
+                    <img src="brower1.png" alt="Product Image" />
+                </div>
+            </div>
+            <div class="product-back">
+                <div class="product-info">
+                    <p class="product-description">Books and magazines are essential for businesses, offering insights and updates that drive growth and keep professionals informed.</p>
+                    <a href="#" class="more-btn">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product">
+        <div class="product-title">Pop Up Banner</div> <!-- Static Title -->
+        <div class="product-inner">
+            <div class="product-front">
+                <div class="image-container">
+                    <img src="brower2.png" alt="Product Image" />
+                </div>
+            </div>
+            <div class="product-back">
+                <div class="product-info">
+                    <p class="product-description">Eye-catching Pop-Up Banner: Lightweight, easy setup, perfect for events, trade shows, and promotions!</p>
+                    <a href="#" class="more-btn">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product">
+        <div class="product-title">Flyers</div> <!-- Static Title -->
+        <div class="product-inner">
+            <div class="product-front">
+                <div class="image-container">
+                    <img src="brower3.png" alt="Product Image" />
+                </div>
+            </div>
+            <div class="product-back">
+                <div class="product-info">
+                    <p class="product-description">Brilliant marketing ideas deserve to be presented beautifully. Easily design your advertising and marketing material that impresses your audience</p>
+                    <a href="#" class="more-btn">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product">
+        <div class="product-title">Brochures</div> <!-- Static Title -->
+        <div class="product-inner">
+            <div class="product-front">
+                <div class="image-container">
+                    <img src="brower4.png" alt="Product Image" />
+                </div>
+            </div>
+            <div class="product-back">
+                <div class="product-info">
+                    <p class="product-description">Our folded brochures, printed. full-colour CMYK on 150gsm paper or stock option of your choice is very effective way to communicate your business content. We offer folded sizes of DL, A5, A4 or custom size</p>
+                    <a href="#" class="more-btn">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+      .product-section-title {
+        font-size: 35px;
+        font-weight: bolder;
+        color: #4a90e2;
+    }
+
+  .product-section {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+  }
+
+  .product {
+      width: 250px;
+      height: 350px;
+      perspective: 1000px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-title {
+      background-color: #4a90e2;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+  }
+
+  .product-inner {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 50px); /* Adjusted for the title */
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+  }
+
+  .product:hover .product-inner {
+      transform: rotateY(180deg);
+  }
+
+  .product-front, .product-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .product-front {
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+  }
+
+  .image-container img {
+      width: 100%;
+      height: auto ;
+      border-radius: 0 0 15px 15px;
+  }
+
+  .product-back {
+      background-color: #ffffff;
+      color: #000;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      text-align: center;
+  }
+
+  .product-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .product-description {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 15px;
+  }
+
+  .more-btn {
+      padding: 10px 20px;
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+  }
+
+  .more-btn:hover {
+      background-color: #e64a19;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+      .product {
+          width: 200px;
+          height: 300px;
+      }
+      .product-title, .product-name {
+          font-size: 16px;
+      }
+      .product-description {
+          font-size: 13px;
+      }
+      .more-btn {
+          padding: 8px 16px;
+      }
+  }
+
+    /* Responsive Adjustments for 490px and below */
+    @media (max-width: 490px) {
+      .product-section {
+          justify-content: space-between; /* Ensure spacing between two items */
+      }
+      .product {
+          width: calc(50% - 10px); /* Ensure two products per row */
+          height: 280px;
+      }
+      .product-title, .product-name {
+          font-size: 14px;
+      }
+      .product-description {
+          font-size: 12px;
+      }
+      .more-btn {
+          padding: 6px 12px;
+          font-size: 12px;
+      }
+  }
+
+</style>
+
+    <!-- Footer Start -->
+  <footer class="footer-container bg-dark text-light">
+    <div class="footer-content container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5 class="footer-title">Address</h5>
+                <p class="footer-address-text"><i class="fa fa-map-marker-alt"></i> 123 Street, New York, USA</p>
+                <p class="footer-address-text"><i class="fa fa-phone-alt"></i> +012 345 67890</p>
+                <p class="footer-address-text"><i class="fa fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5 class="footer-title">Services</h5>
+                <ul class="footer-links">
+                   <li><a href="Stands.html" class="footer-link">Stands</a></li>
+                    <li><a href="standee.html" class="footer-link">Standees</a></li>
+                    <li><a href="backdrops.html" class="footer-link">BackDrops</a></li>
+                    <li><a href="moreproducts.html" class="footer-link">Other Productss</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    <li><a href="termandconditions.html" class="footer-link">Terms & Conditions</a></li>
+                    <li><a href="support.html" class="footer-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-links">
+                    <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+   /* Main footer container with gradient and glassmorphism effect */
+.footer-container {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9)), url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    padding: 4rem 1.5rem;
+    position: relative;
+}
+
+/* Container and Layout */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Typography */
+.footer-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    text-align: left;
+}
+
+.footer-title::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #007BFF, #ff007f);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Adjust the title line on smaller screens */
+@media (max-width: 490px) {
+    .footer-title {
+        text-align: center; /* Center the title */
+    }
+
+    .footer-title::after {
+        left: 50%; /* Move the line to center */
+        transform: translateX(-50%); /* Adjust the transform for center alignment */
+        width: 60px; /* Slightly smaller width for the line */
+    }
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-text i {
+    color: #007BFF;
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #007BFF;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #007BFF;
+    transform: translateX(5px);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Social Icons with 3D hover effect */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+    background-color: #007BFF;
+    transform: translateY(-5px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 490px) {
+    .footer-container {
+        padding: 3rem 1rem;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-text, .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Center-align the address-specific text */
+    .footer-address-text {
+        text-align: center;
+        margin-bottom: 0.8rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+</style>
+    
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+        <i class="bi bi-arrow-up"></i>
+      </a>
+<style>
+    .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: #052d57;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    color: #fff;
+}
+
+.back-to-top i {
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.back-to-top {
+    animation: bounce 2s infinite;
+}
+
+</style>      
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
