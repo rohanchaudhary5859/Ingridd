@@ -318,168 +318,210 @@ function performSearch() {
     // List of all search terms mapped to HTML pages with additional keywords
     const pages = {
     'premium adjustable backdrop': [
-        'PremiumAdjustableBackdrop.html', 
-        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop'
+        'PremiumAdjustableBackdrop.html',
+        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop',
+        'customizable backdrop', 'photo backdrop', 'studio backdrop', 'event backdrop'
     ],
     'economy adjustable backdrop (imported)': [
-        'EconomyAdjustableBackdrop.html', 
-        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop'
+        'EconomyAdjustableBackdrop.html',
+        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop',
+        'lightweight backdrop', 'portable backdrop', 'durable backdrop', 'trade show backdrop'
     ],
     'pop up backdrop display - velcro': [
-        'PopUpBackdropDisply.html', 
-        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop'
+        'PopUpBackdropDisply.html',
+        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop',
+        'portable display', 'trade show display', 'exhibition backdrop', 'easy setup backdrop'
     ],
     'premium wooden easel stand': [
-        'PremiumWoodenEaselStand.html', 
-        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel'
+        'PremiumWoodenEaselStand.html',
+        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel',
+        'sturdy easel', 'adjustable easel', 'painting easel', 'professional easel'
     ],
     'economy wooden easel stand': [
-        'EconomyWoodenEaselStand.html', 
-        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand'
+        'EconomyWoodenEaselStand.html',
+        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand',
+        'portable easel', 'lightweight easel', 'art stand', 'craft stand'
     ],
     'mini wooden easel stand': [
-        'MiniWoodenEaselStand.html', 
-        'mini easel', 'small easel', 'tabletop easel', 'compact easel'
+        'MiniWoodenEaselStand.html',
+        'mini easel', 'small easel', 'tabletop easel', 'compact easel',
+        'decorative easel', 'miniature display', 'photo easel', 'desk easel'
     ],
     'ms easel stand': [
-        'MSEaselStand.html', 
-        'ms easel', 'metal easel', 'easel stand', 'sturdy easel'
+        'MSEaselStand.html',
+        'ms easel', 'metal easel', 'easel stand', 'sturdy easel',
+        'adjustable stand', 'durable easel', 'art display stand', 'multi-purpose stand'
     ],
     'premium tripod easel stand': [
-        'PremiumTripodEaselStand.html', 
-        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod'
+        'PremiumTripodEaselStand.html',
+        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod',
+        'lightweight tripod', 'collapsible tripod', 'art tripod', 'studio easel'
     ],
     'zigzag brochure stand - aluminium': [
-        'ZigZagBrochureStandAluminium.html', 
-        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack'
+        'ZigZagBrochureStandAluminium.html',
+        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack',
+        'foldable stand', 'literature display', 'pamphlet holder', 'trade show rack'
     ],
     'ms zigzag brochure stand': [
-        'MSZigZagBrochureStand.html', 
-        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand'
+        'MSZigZagBrochureStand.html',
+        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand',
+        'durable brochure stand', 'exhibition stand', 'portable rack', 'catalog stand'
     ],
     'acrylic brochure stand': [
-        'AcrylicBrochureStand.html', 
-        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack'
+        'AcrylicBrochureStand.html',
+        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack',
+        'pamphlet stand', 'transparent holder', 'catalog display', 'desk brochure stand'
     ],
     'newspaper stand': [
-        'NewspaperStand.html', 
-        'newspaper holder', 'magazine stand', 'news rack', 'press stand'
+        'NewspaperStand.html',
+        'newspaper holder', 'magazine stand', 'news rack', 'press stand',
+        'periodical holder', 'news display', 'magazine rack', 'literature organizer'
     ],
     'sunboard stand': [
-        'SunboardStand.html', 
-        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board'
+        'SunboardStand.html',
+        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board',
+        'graphic display', 'presentation board', 'freestanding stand', 'marketing board'
     ],
     'double side poster stand': [
-        'DoubleSidePosterStand.html', 
-        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand'
+        'DoubleSidePosterStand.html',
+        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand',
+        'dual display stand', 'promotional stand', 'poster rack', 'trade show display'
     ],
     'poster floor stand': [
-        'PosterFloorStand.html', 
-        'poster stand', 'floor display', 'advertising stand', 'marketing stand'
+        'PosterFloorStand.html',
+        'poster stand', 'floor display', 'advertising stand', 'marketing stand',
+        'freestanding poster holder', 'signage stand', 'exhibition display', 'info stand'
     ],
     'tripod stand': [
-        'TripodStand.html', 
-        'tripod', 'support stand', 'photo stand', 'camera tripod'
+        'TripodStand.html',
+        'tripod', 'support stand', 'photo stand', 'camera tripod',
+        'adjustable tripod', 'portable tripod', 'sturdy stand', 'multi-purpose tripod'
     ],
     'corrugated pop display stand': [
-        'CorrugatedPOP.html', 
-        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display'
+        'CorrugatedPOP.html',
+        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display',
+        'lightweight display', 'eco-friendly stand', 'retail stand', 'product display'
     ],
     'roll up standee': [
-        'RollUpStandee.html', 
-        'roll up', 'roll up banner', 'pull-up stand', 'banner stand'
+        'RollUpStandee.html',
+        'roll up', 'roll up banner', 'pull-up stand', 'banner stand',
+        'portable standee', 'promotional banner', 'easy-to-carry banner', 'trade show standee'
     ],
     'black premium roll up standee': [
-        'BlackPremiumRollUpStandee.html', 
-        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner'
+        'BlackPremiumRollUpStandee.html',
+        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner',
+        'sleek standee', 'modern roll up', 'luxury banner', 'high-end display'
     ],
     'luxury roll up standee': [
-        'LuxuryRollUpStandee.html', 
-        'luxury roll up', 'high-end banner', 'designer standee', 'premium display'
+        'LuxuryRollUpStandee.html',
+        'luxury roll up', 'high-end banner', 'designer standee', 'premium display',
+        'stylish banner', 'exclusive standee', 'professional banner', 'decorative roll up'
     ],
     'triangle base roll up standee': [
-        'TriangleBaseRollUpStandee.html', 
-        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner'
+        'TriangleBaseRollUpStandee.html',
+        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner',
+        'geometric standee', 'durable roll up', 'secure base stand', 'modern design banner'
     ],
+   
     'mini roll up standee': [
-        'MiniRollUpStandee.html', 
-        'mini roll up', 'compact roll up', 'small banner', 'portable stand'
+        'MiniRollUpStandee.html',
+        'mini roll up', 'compact roll up', 'small banner', 'portable stand',
+        'desktop roll up', 'lightweight banner', 'travel-friendly standee', 'tabletop display'
     ],
     'double side premium roll up standee': [
-        'DoubleSidePremiumRollUpStandee.html', 
-        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand'
+        'DoubleSidePremiumRollUpStandee.html',
+        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand',
+        'dual display banner', 'luxury roll up', 'advertising stand', 'double-sided marketing stand'
     ],
     'double side mini roll up standee': [
-        'DoubleSideMiniRollUpStandee.html', 
-        'double side mini', 'two-sided mini', 'small banner stand', 'compact display'
+        'DoubleSideMiniRollUpStandee.html',
+        'double side mini', 'two-sided mini', 'small banner stand', 'compact display',
+        'dual tabletop banner', 'portable dual standee', 'travel-size roll up', 'miniature display stand'
     ],
     'x banner standee (indoor)': [
-        'XBannerStandee.html', 
-        'x banner', 'cross banner', 'x-frame stand', 'indoor display'
+        'XBannerStandee.html',
+        'x banner', 'cross banner', 'x-frame stand', 'indoor display',
+        'lightweight x stand', 'portable banner', 'promotional banner', 'trade show x-stand'
     ],
     'l banner standee (indoor)': [
-        'LBannerStandee.html', 
-        'l banner', 'l-frame stand', 'indoor banner', 'display stand'
+        'LBannerStandee.html',
+        'l banner', 'l-frame stand', 'indoor banner', 'display stand',
+        'compact l stand', 'lightweight l banner', 'freestanding banner', 'durable banner stand'
     ],
     'double banner standee (indoor)': [
-        'DoubleBannerStandee.html', 
-        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner'
+        'DoubleBannerStandee.html',
+        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner',
+        'dual marketing stand', 'freestanding double display', 'compact dual stand', 'promotional banner stand'
     ],
     'mini x banner standee': [
-        'minix.html', 
-        'mini x banner', 'small x stand', 'compact banner', 'tabletop display'
+        'minix.html',
+        'mini x banner', 'small x stand', 'compact banner', 'tabletop display',
+        'portable mini stand', 'desk x-banner', 'travel-friendly stand', 'lightweight display stand'
     ],
     'lama standee foldable': [
-        'lamastandee.html', 
-        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand'
+        'lamastandee.html',
+        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand',
+        'lightweight standee', 'freestanding foldable stand', 'compact advertising stand', 'promotional display'
     ],
     'gazebo tent': [
-        'garebotent.html', 
-        'gazebo', 'outdoor tent', 'canopy', 'event tent'
+        'garebotent.html',
+        'gazebo', 'outdoor tent', 'canopy', 'event tent',
+        'portable shelter', 'exhibition tent', 'promotional tent', 'waterproof canopy'
     ],
     'canopy tent': [
-        'canopytent.html', 
-        'canopy', 'event canopy', 'shade tent', 'outdoor shelter'
+        'canopytent.html',
+        'canopy', 'event canopy', 'shade tent', 'outdoor shelter',
+        'promotional canopy', 'foldable tent', 'weatherproof shelter', 'trade show canopy'
     ],
     'promotional umbrella': [
-        'promotionalumbrella.html', 
-        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella'
+        'promotionalumbrella.html',
+        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella',
+        'custom printed umbrella', 'outdoor display umbrella', 'large shade umbrella', 'marketing umbrella'
     ],
     'promotional flags (feather/teardrop)': [
-        'promotionalflags.html', 
-        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags'
+        'promotionalflags.html',
+        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags',
+        'custom flags', 'outdoor promotional banners', 'event flags', 'branded flags'
     ],
     'clip on led frame': [
-        'clipsonledframe.html', 
-        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame'
+        'clipsonledframe.html',
+        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame',
+        'wall-mounted frame', 'slim led display', 'bright advertising frame', 'visual display frame'
     ],
     'backlit fabric frame': [
-        'backlitfabric.html', 
-        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame'
+        'backlitfabric.html',
+        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame',
+        'durable fabric frame', 'modern advertising display', 'bright fabric sign', 'sleek backlit stand'
     ],
     'acrylic aluminium frame': [
-        'Acrylicaluminiumframe.html', 
-        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame'
+        'Acrylicaluminiumframe.html',
+        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame',
+        'durable frame', 'lightweight aluminium frame', 'office signage frame', 'modern design frame'
     ],
     'slim led frame': [
-        'slimled.html', 
-        'slim frame', 'thin led frame', 'minimal frame', 'sleek display'
+        'slimled.html',
+        'slim frame', 'thin led frame', 'minimal frame', 'sleek display',
+        'modern frame', 'bright led display', 'decorative signage', 'low-profile led frame'
     ],
     'neon led lights': [
-        'neonled.html', 
-        'neon lights', 'led neon sign', 'bright lights', 'decorative lights'
+        'neonled.html',
+        'neon lights', 'led neon sign', 'bright lights', 'decorative lights',
+        'custom neon signs', 'event neon display', 'artistic neon frame', 'vivid led lighting'
     ],
     'nonlit aluminium frame': [
-        'nonlitaluminium.html', 
-        'nonlit frame', 'aluminium display', 'static frame', 'standard frame'
+        'nonlitaluminium.html',
+        'nonlit frame', 'aluminium display', 'static frame', 'standard frame',
+        'durable nonlit frame', 'simple display stand', 'office display frame', 'basic aluminium signage'
     ],
     'garden umbrella': [
-        'gardenumbrella.html', 
-        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade'
+        'gardenumbrella.html',
+        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade',
+        'large garden shade', 'decorative umbrella', 'event umbrella', 'weatherproof garden canopy'
     ],
     'parachute dangler': [
-        'Parachutedangler.html', 
-        'dangler', 'hanging display', 'parachute banner', 'suspended display'
+        'Parachutedangler.html',
+        'dangler', 'hanging display', 'parachute banner', 'suspended display',
+        'creative dangler', 'event hanging sign', 'lightweight banner', 'advertising dangler'
     ],
 };
 
