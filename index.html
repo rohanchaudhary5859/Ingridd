@@ -323,168 +323,210 @@ function performSearch() {
     // List of all search terms mapped to HTML pages with additional keywords
     const pages = {
     'premium adjustable backdrop': [
-        'PremiumAdjustableBackdrop.html', 
-        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop'
+        'PremiumAdjustableBackdrop.html',
+        'adjustable backdrop', 'premium backdrop', 'high-quality backdrop', 'flexible backdrop',
+        'customizable backdrop', 'photo backdrop', 'studio backdrop', 'event backdrop'
     ],
     'economy adjustable backdrop (imported)': [
-        'EconomyAdjustableBackdrop.html', 
-        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop'
+        'EconomyAdjustableBackdrop.html',
+        'economy backdrop', 'affordable backdrop', 'imported backdrop', 'budget backdrop',
+        'lightweight backdrop', 'portable backdrop', 'durable backdrop', 'trade show backdrop'
     ],
     'pop up backdrop display - velcro': [
-        'PopUpBackdropDisply.html', 
-        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop'
+        'PopUpBackdropDisply.html',
+        'pop up backdrop', 'velcro backdrop', 'instant backdrop', 'display backdrop',
+        'portable display', 'trade show display', 'exhibition backdrop', 'easy setup backdrop'
     ],
     'premium wooden easel stand': [
-        'PremiumWoodenEaselStand.html', 
-        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel'
+        'PremiumWoodenEaselStand.html',
+        'wooden easel stand', 'high-quality easel', 'artist easel', 'display easel',
+        'sturdy easel', 'adjustable easel', 'painting easel', 'professional easel'
     ],
     'economy wooden easel stand': [
-        'EconomyWoodenEaselStand.html', 
-        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand'
+        'EconomyWoodenEaselStand.html',
+        'economy wooden easel', 'budget easel', 'affordable easel', 'wooden display stand',
+        'portable easel', 'lightweight easel', 'art stand', 'craft stand'
     ],
     'mini wooden easel stand': [
-        'MiniWoodenEaselStand.html', 
-        'mini easel', 'small easel', 'tabletop easel', 'compact easel'
+        'MiniWoodenEaselStand.html',
+        'mini easel', 'small easel', 'tabletop easel', 'compact easel',
+        'decorative easel', 'miniature display', 'photo easel', 'desk easel'
     ],
     'ms easel stand': [
-        'MSEaselStand.html', 
-        'ms easel', 'metal easel', 'easel stand', 'sturdy easel'
+        'MSEaselStand.html',
+        'ms easel', 'metal easel', 'easel stand', 'sturdy easel',
+        'adjustable stand', 'durable easel', 'art display stand', 'multi-purpose stand'
     ],
     'premium tripod easel stand': [
-        'PremiumTripodEaselStand.html', 
-        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod'
+        'PremiumTripodEaselStand.html',
+        'tripod easel', 'high-quality tripod', 'portable easel', 'adjustable tripod',
+        'lightweight tripod', 'collapsible tripod', 'art tripod', 'studio easel'
     ],
     'zigzag brochure stand - aluminium': [
-        'ZigZagBrochureStandAluminium.html', 
-        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack'
+        'ZigZagBrochureStandAluminium.html',
+        'zigzag brochure stand', 'aluminum brochure holder', 'zigzag display stand', 'brochure rack',
+        'foldable stand', 'literature display', 'pamphlet holder', 'trade show rack'
     ],
     'ms zigzag brochure stand': [
-        'MSZigZagBrochureStand.html', 
-        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand'
+        'MSZigZagBrochureStand.html',
+        'ms zigzag stand', 'zigzag display', 'brochure display', 'advertisement stand',
+        'durable brochure stand', 'exhibition stand', 'portable rack', 'catalog stand'
     ],
     'acrylic brochure stand': [
-        'AcrylicBrochureStand.html', 
-        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack'
+        'AcrylicBrochureStand.html',
+        'acrylic stand', 'clear brochure holder', 'display stand', 'literature rack',
+        'pamphlet stand', 'transparent holder', 'catalog display', 'desk brochure stand'
     ],
     'newspaper stand': [
-        'NewspaperStand.html', 
-        'newspaper holder', 'magazine stand', 'news rack', 'press stand'
+        'NewspaperStand.html',
+        'newspaper holder', 'magazine stand', 'news rack', 'press stand',
+        'periodical holder', 'news display', 'magazine rack', 'literature organizer'
     ],
     'sunboard stand': [
-        'SunboardStand.html', 
-        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board'
+        'SunboardStand.html',
+        'sunboard display', 'sunboard holder', 'lightweight stand', 'advertising board',
+        'graphic display', 'presentation board', 'freestanding stand', 'marketing board'
     ],
     'double side poster stand': [
-        'DoubleSidePosterStand.html', 
-        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand'
+        'DoubleSidePosterStand.html',
+        'double side poster', 'two-sided stand', 'poster display', 'advertisement stand',
+        'dual display stand', 'promotional stand', 'poster rack', 'trade show display'
     ],
     'poster floor stand': [
-        'PosterFloorStand.html', 
-        'poster stand', 'floor display', 'advertising stand', 'marketing stand'
+        'PosterFloorStand.html',
+        'poster stand', 'floor display', 'advertising stand', 'marketing stand',
+        'freestanding poster holder', 'signage stand', 'exhibition display', 'info stand'
     ],
     'tripod stand': [
-        'TripodStand.html', 
-        'tripod', 'support stand', 'photo stand', 'camera tripod'
+        'TripodStand.html',
+        'tripod', 'support stand', 'photo stand', 'camera tripod',
+        'adjustable tripod', 'portable tripod', 'sturdy stand', 'multi-purpose tripod'
     ],
     'corrugated pop display stand': [
-        'CorrugatedPOP.html', 
-        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display'
+        'CorrugatedPOP.html',
+        'corrugated display', 'pop up display', 'corrugated stand', 'promotional display',
+        'lightweight display', 'eco-friendly stand', 'retail stand', 'product display'
     ],
     'roll up standee': [
-        'RollUpStandee.html', 
-        'roll up', 'roll up banner', 'pull-up stand', 'banner stand'
+        'RollUpStandee.html',
+        'roll up', 'roll up banner', 'pull-up stand', 'banner stand',
+        'portable standee', 'promotional banner', 'easy-to-carry banner', 'trade show standee'
     ],
     'black premium roll up standee': [
-        'BlackPremiumRollUpStandee.html', 
-        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner'
+        'BlackPremiumRollUpStandee.html',
+        'black roll up', 'premium banner stand', 'elegant roll up', 'dark banner',
+        'sleek standee', 'modern roll up', 'luxury banner', 'high-end display'
     ],
     'luxury roll up standee': [
-        'LuxuryRollUpStandee.html', 
-        'luxury roll up', 'high-end banner', 'designer standee', 'premium display'
+        'LuxuryRollUpStandee.html',
+        'luxury roll up', 'high-end banner', 'designer standee', 'premium display',
+        'stylish banner', 'exclusive standee', 'professional banner', 'decorative roll up'
     ],
     'triangle base roll up standee': [
-        'TriangleBaseRollUpStandee.html', 
-        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner'
+        'TriangleBaseRollUpStandee.html',
+        'triangle roll up', 'triangular stand', 'base roll up', 'stable banner',
+        'geometric standee', 'durable roll up', 'secure base stand', 'modern design banner'
     ],
+   
     'mini roll up standee': [
-        'MiniRollUpStandee.html', 
-        'mini roll up', 'compact roll up', 'small banner', 'portable stand'
+        'MiniRollUpStandee.html',
+        'mini roll up', 'compact roll up', 'small banner', 'portable stand',
+        'desktop roll up', 'lightweight banner', 'travel-friendly standee', 'tabletop display'
     ],
     'double side premium roll up standee': [
-        'DoubleSidePremiumRollUpStandee.html', 
-        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand'
+        'DoubleSidePremiumRollUpStandee.html',
+        'double side premium', 'two-sided roll up', 'high-quality banner', 'premium display stand',
+        'dual display banner', 'luxury roll up', 'advertising stand', 'double-sided marketing stand'
     ],
     'double side mini roll up standee': [
-        'DoubleSideMiniRollUpStandee.html', 
-        'double side mini', 'two-sided mini', 'small banner stand', 'compact display'
+        'DoubleSideMiniRollUpStandee.html',
+        'double side mini', 'two-sided mini', 'small banner stand', 'compact display',
+        'dual tabletop banner', 'portable dual standee', 'travel-size roll up', 'miniature display stand'
     ],
     'x banner standee (indoor)': [
-        'XBannerStandee.html', 
-        'x banner', 'cross banner', 'x-frame stand', 'indoor display'
+        'XBannerStandee.html',
+        'x banner', 'cross banner', 'x-frame stand', 'indoor display',
+        'lightweight x stand', 'portable banner', 'promotional banner', 'trade show x-stand'
     ],
     'l banner standee (indoor)': [
-        'LBannerStandee.html', 
-        'l banner', 'l-frame stand', 'indoor banner', 'display stand'
+        'LBannerStandee.html',
+        'l banner', 'l-frame stand', 'indoor banner', 'display stand',
+        'compact l stand', 'lightweight l banner', 'freestanding banner', 'durable banner stand'
     ],
     'double banner standee (indoor)': [
-        'DoubleBannerStandee.html', 
-        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner'
+        'DoubleBannerStandee.html',
+        'double banner', 'two-sided banner', 'indoor display stand', 'advertisement banner',
+        'dual marketing stand', 'freestanding double display', 'compact dual stand', 'promotional banner stand'
     ],
     'mini x banner standee': [
-        'minix.html', 
-        'mini x banner', 'small x stand', 'compact banner', 'tabletop display'
+        'minix.html',
+        'mini x banner', 'small x stand', 'compact banner', 'tabletop display',
+        'portable mini stand', 'desk x-banner', 'travel-friendly stand', 'lightweight display stand'
     ],
     'lama standee foldable': [
-        'lamastandee.html', 
-        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand'
+        'lamastandee.html',
+        'foldable standee', 'portable standee', 'collapsible display', 'easy transport stand',
+        'lightweight standee', 'freestanding foldable stand', 'compact advertising stand', 'promotional display'
     ],
     'gazebo tent': [
-        'garebotent.html', 
-        'gazebo', 'outdoor tent', 'canopy', 'event tent'
+        'garebotent.html',
+        'gazebo', 'outdoor tent', 'canopy', 'event tent',
+        'portable shelter', 'exhibition tent', 'promotional tent', 'waterproof canopy'
     ],
     'canopy tent': [
-        'canopytent.html', 
-        'canopy', 'event canopy', 'shade tent', 'outdoor shelter'
+        'canopytent.html',
+        'canopy', 'event canopy', 'shade tent', 'outdoor shelter',
+        'promotional canopy', 'foldable tent', 'weatherproof shelter', 'trade show canopy'
     ],
     'promotional umbrella': [
-        'promotionalumbrella.html', 
-        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella'
+        'promotionalumbrella.html',
+        'promotional umbrella', 'advertising umbrella', 'branded umbrella', 'event umbrella',
+        'custom printed umbrella', 'outdoor display umbrella', 'large shade umbrella', 'marketing umbrella'
     ],
     'promotional flags (feather/teardrop)': [
-        'promotionalflags.html', 
-        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags'
+        'promotionalflags.html',
+        'feather flags', 'teardrop flags', 'advertising flags', 'banner flags',
+        'custom flags', 'outdoor promotional banners', 'event flags', 'branded flags'
     ],
     'clip on led frame': [
-        'clipsonledframe.html', 
-        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame'
+        'clipsonledframe.html',
+        'clip on frame', 'led display frame', 'backlit frame', 'illuminated frame',
+        'wall-mounted frame', 'slim led display', 'bright advertising frame', 'visual display frame'
     ],
     'backlit fabric frame': [
-        'backlitfabric.html', 
-        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame'
+        'backlitfabric.html',
+        'backlit frame', 'fabric display', 'illuminated backdrop', 'lighted frame',
+        'durable fabric frame', 'modern advertising display', 'bright fabric sign', 'sleek backlit stand'
     ],
     'acrylic aluminium frame': [
-        'Acrylicaluminiumframe.html', 
-        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame'
+        'Acrylicaluminiumframe.html',
+        'acrylic frame', 'aluminium display', 'clear frame', 'professional display frame',
+        'durable frame', 'lightweight aluminium frame', 'office signage frame', 'modern design frame'
     ],
     'slim led frame': [
-        'slimled.html', 
-        'slim frame', 'thin led frame', 'minimal frame', 'sleek display'
+        'slimled.html',
+        'slim frame', 'thin led frame', 'minimal frame', 'sleek display',
+        'modern frame', 'bright led display', 'decorative signage', 'low-profile led frame'
     ],
     'neon led lights': [
-        'neonled.html', 
-        'neon lights', 'led neon sign', 'bright lights', 'decorative lights'
+        'neonled.html',
+        'neon lights', 'led neon sign', 'bright lights', 'decorative lights',
+        'custom neon signs', 'event neon display', 'artistic neon frame', 'vivid led lighting'
     ],
     'nonlit aluminium frame': [
-        'nonlitaluminium.html', 
-        'nonlit frame', 'aluminium display', 'static frame', 'standard frame'
+        'nonlitaluminium.html',
+        'nonlit frame', 'aluminium display', 'static frame', 'standard frame',
+        'durable nonlit frame', 'simple display stand', 'office display frame', 'basic aluminium signage'
     ],
     'garden umbrella': [
-        'gardenumbrella.html', 
-        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade'
+        'gardenumbrella.html',
+        'garden umbrella', 'outdoor umbrella', 'patio umbrella', 'sunshade',
+        'large garden shade', 'decorative umbrella', 'event umbrella', 'weatherproof garden canopy'
     ],
     'parachute dangler': [
-        'Parachutedangler.html', 
-        'dangler', 'hanging display', 'parachute banner', 'suspended display'
+        'Parachutedangler.html',
+        'dangler', 'hanging display', 'parachute banner', 'suspended display',
+        'creative dangler', 'event hanging sign', 'lightweight banner', 'advertising dangler'
     ],
 };
 
@@ -505,244 +547,226 @@ function performSearch() {
 </script>
     </nav>
     <!-- Navbar End -->
-    <section class="hero-section" id="hero">
-        <div class="hero-wrapper">
-            <div class="hero-content">
-                <img src="desktop_tiny.png" alt="Design Studio" class="hero-image">
-                <div class="hero-text">
-                    <h1>Design Studio</h1>
-                    <p>Easy-To-Use Online Designer</p>
-                    <p>Create and save your designs from a vast template library</p>
-                </div>
+   <section class="hero-section" id="hero">
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <img src="desktop_tiny.png" alt="Design Studio" class="hero-image">
+            <div class="hero-text">
+                <h1>Design Studio</h1>
+                <p>Easy-To-Use Online Designer</p>
+                <p>Create and save your designs from a vast template library</p>
             </div>
         </div>
-    </section>
-    
-    <style>
-    /* Hero Section Styling */
-    .hero-section {
-        background-color: #f0f0f5;
-        padding: 60px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 75vh;
-        overflow: hidden;
-    }
-    
-    .hero-wrapper {
-        max-width: 900px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
+    </div>
+</section>
+
+<style>
+/* Hero Section Styling */
+.hero-section {
+    background-color: #f0f0f5;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    overflow: hidden;
+}
+
+.hero-wrapper {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-image {
+    max-width: 70%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.hero-text {
+    max-width: 55%;
+    color: #000000;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+/* Hover Animation */
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .hero-content {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        opacity: 0;
-        transform: translateY(80px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        transform: translateX(-80px); /* Adjust for smaller screens */
     }
-    
+
     .hero-image {
-        max-width: 70%;
-        height: auto;
-        transition: transform 0.5s ease;
+        max-width: 80%;
     }
-    
+
     .hero-text {
-        max-width: 55%;
-        color: #000000;
+        max-width: 100%;
     }
-    
+
     .hero-text h1 {
-        font-size: 4.5rem;
-        font-weight: 700;
-        margin-bottom: 15px;
+        font-size: 2.8rem;
     }
-    
+
     .hero-text p {
-        font-size: 1.8rem;
-        margin: 10px 0;
+        font-size: 1.1rem;
     }
-    
-    /* Hover Animation */
-    .hero-image:hover {
-        transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 3.7rem;
     }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .hero-content {
-            flex-direction: column;
-            text-align: center;
-            gap: 30px;
-        }
-    
-        .hero-image {
-            max-width: 80%;
-        }
-    
-        .hero-text {
-            max-width: 100%;
-        }
-    
-        .hero-text h1 {
-            font-size: 2.8rem;
-        }
-    
-        .hero-text p {
-            font-size: 1.1rem;
-        }
+
+    .hero-text p {
+        font-size: 1.4rem;
     }
-    
-    @media (max-width: 480px) {
-        .hero-text h1 {
-            font-size: 3.7rem;
-        }
-    
-        .hero-text p {
-            font-size: 1.4rem;
-        }
-    }
-    
-    /* Animation Class */
-    .visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    </style>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const hero = document.getElementById("hero");
-        const heroContent = document.querySelector(".hero-content");
-    
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroContent.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-    
-        observer.observe(hero);
-    });
-    </script>
-    
+}
+
+/* Animation Class */
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.getElementById("hero");
+    const heroContent = document.querySelector(".hero-content");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroContent.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(hero);
+});
+</script>
+
    <style>
 /* General container styling */
 .product-section {
     max-width: 100%;
-    padding: 20px 10px; /* Reduced padding */
+    padding: 20px 10px;
     text-align: center;
-    background-color: #f3f4f6;
-    background-image: linear-gradient(135deg, #f9fafb 25%, #ffffff 100%);
-    border-radius: 10px; /* Slightly reduced border radius */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
 }
 
 .product-section h2 {
-    color: #1B2C51;
-    margin-top: 30px;
-    font-size: 3.0em; /* Reduced font size */
-    margin-bottom: 10px; /* Reduced margin */
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    animation: fadeInTitle 0.8s ease-in-out;
+    color: #1e293b;
+    margin-top: 15px;
+    font-size: 2.4em;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    animation: fadeInTitle 0.5s ease-in-out;
     position: relative;
     display: inline-block;
-    padding-bottom: 6px; /* Reduced padding */
+    padding-bottom: 8px;
 }
 
 .product-section h2:hover {
-    color: #1d4ed8; /* Change color on hover */
+    color: #1d4ed8;
+    transform: scale(1.05);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .product-section h2::after {
     content: '';
-    width: 50px; /* Reduced underline width */
-    height: 3px;
-    background-color: #1d4ed8;
+    width: 50px;
+    height: 4px;
+    background: #1d4ed8;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 /* Grid layout for products */
 .products-grid {
     display: grid;
-    gap: 15px; /* Tightened grid gap */
-    padding: 0 3%;
+    gap: 12px;
+    padding: 0 2%;
 }
 
 /* Product box styling */
 .product-item {
-    background-color: #ffffff;
-    padding: 10px; /* Reduced padding */
-    border-radius: 12px; /* Reduced border radius */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Slightly faster transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    min-height: 150px; /* Reduced minimum height */
+    min-height: 110px;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-.product-item::before {
-    content: '';
-    position: absolute;
-    top: -60%; /* Adjusted position */
-    left: -60%;
-    width: 180%;
-    height: 180%;
-    background-color: rgba(29, 78, 216, 0.05); /* Lighter background effect */
-    border-radius: 50%;
-    transition: transform 0.4s ease; /* Reduced transition duration */
-    z-index: -1;
-}
-
-.product-item:hover::before {
-    transform: scale(1.1); /* Reduced scale on hover */
-}
-
 .product-item:hover {
-    transform: translateY(-5px) scale(1.02); /* Reduced translation and scale */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Lighter shadow on hover */
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
-.product-item:hover i {
-    color: #1d4ed8;
-    animation: pulseIcon 1s ease infinite; /* Slightly shorter pulse duration */
-}
-
-/* Product icon and text styling */
 .product-item i {
-    font-size: 40px; /* Reduced icon size */
+    font-size: 30px;
     color: #2563eb;
-    margin-bottom: 8px; /* Reduced margin */
+    margin-bottom: 8px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .product-item:hover i {
-    transform: scale(1.1); /* Slightly reduced hover scale */
+    color: #1d4ed8;
+    transform: scale(1.15);
 }
 
 .product-item p {
-    color: #4a5568;
-    font-weight: 600;
-    font-size: 0.95em; /* Slightly smaller text size */
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 0.9em;
     margin: 0;
     text-align: center;
     white-space: nowrap;
@@ -751,10 +775,10 @@ function performSearch() {
     max-width: 90%;
 }
 
-/* Responsive grid layout for different screen sizes */
+/* Responsive grid layout */
 @media (min-width: 1200px) {
     .products-grid {
-        grid-template-columns: repeat(6, 1fr); /* 6 columns for large screens */
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 
@@ -778,15 +802,18 @@ function performSearch() {
 
 @media (max-width: 490px) {
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-        gap: 10px; /* Adjust grid gap to ensure proper spacing */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .product-item {
-        min-height: 120px; /* Adjust height for smaller screens */
+        min-height: 90px;
+    }
+
+    .product-item p {
+        font-size: 0.8em;
     }
 }
-
 
 /* Title fade-in animation */
 @keyframes fadeInTitle {
@@ -796,32 +823,6 @@ function performSearch() {
     }
     to {
         opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Icon pulse animation on hover */
-@keyframes pulseIcon {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1); /* Reduced scale */
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Button hover bounce animation */
-@keyframes bounceHover {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px); /* Reduced bounce height */
-    }
-    100% {
         transform: translateY(0);
     }
 }
