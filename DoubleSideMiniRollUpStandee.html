@@ -554,15 +554,15 @@ function performSearch() {
     <div class="main-container">
         <div class="information-panel">
             <h1>Double Side Mini Roll Up Standee</h1>
-            <img src="doublesidemini.png" alt="Double Side Mini Roll Up Standee" style="height: 490px;">
+            <img src="doublesidemini.png" alt="Double Side Mini Roll Up Standee" />
             <div class="tab-buttons">
                 <button class="tab-button active-button" onclick="switchTabContent('details-section')">Details</button>
                 <button class="tab-button" onclick="switchTabContent('features-section')">Features</button>
             </div>
-            <div class="tab-content" id="details-section">
+            <div class="tab-content active-content" id="details-section ">
                 <p>Enhance your business's image with our premium-quality roll-up standees. Featuring durable materials and a flawless finish, these standees are perfect for making a sophisticated statement.</p>
             </div>
-            <div class="tab-content" id="features-section" style="display: none;">
+            <div class="tab-content" id="features-section">
                 <h3>Features</h3>
                 <ul>
                     <li>Lightweight and portable design</li>
@@ -572,260 +572,180 @@ function performSearch() {
                 </ul>
             </div>
         </div>
-    
-        <div class="order-section">
-            <form class="price-calculator-form">
-                <label for="size-selector">Size</label>
-                <select id="size-selector">
-                    <option>90 x 55mm</option>
-                    <option>85 x 54mm</option>
-                </select>
-                <label for="quantity-selector">Quantity</label>
-                <select id="quantity-selector" onchange="calculateTotalPrice()">
-                    <option value="250" data-price="9000">250</option>
-                    <option value="500" data-price="15000">500</option>
-                    <option value="1000" data-price="25000">1000</option>
-                </select>
-                <label for="material-selector">Material</label>
-                <select id="material-selector">
-                    <option>350gsm Gloss Art Board</option>
-                    <option>400gsm Matt Board</option>
-                </select>
-                <label for="print-side-selector">Printed Sides</label>
-                <select id="print-side-selector">
-                    <option>Front Only</option>
-                    <option>Front and Back</option>
-                </select>
-                <label for="lamination-selector">Lamination</label>
-                <select id="lamination-selector">
-                    <option>None</option>
-                    <option>Gloss</option>
-                    <option>Matt</option>
-                </select>
-                <label for="corner-style-selector">Corners</label>
-                <select id="corner-style-selector">
-                    <option>Square</option>
-                    <option>Rounded</option>
-                </select>
-                <label for="designer-selector">Hire Designer</label>
-                <select id="designer-selector">
-                    <option>No</option>
-                    <option>Yes</option>
-                </select>
-                <div class="total-cost-display">Total (Incl GST): ₹<span class="cost-value">9000.00</span></div>
-                <div>Unit Price: ₹<span id="unit-price-display">36.00</span></div>
-                <button type="button" class="update-price-button" onclick="calculateTotalPrice()">Update Price</button>
-            </form>
-        </div>
     </div>
-   
-    <style>
-      * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    
+   <style>
+       
+    
+        .main-container {
+            max-width: 1100px;
+            padding: 30px;
 
-.main-container {
-    max-width: 1200px;
-    background: #ffffff;
-    padding: 20px;
-    box-shadow: 5px 10px 30px rgba(8, 8, 8, 0.1);
-    display: flex;
-    gap: 20px;
-    border-radius: 12px;
-    margin: 20px auto;
-    overflow: hidden;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.information-panel, .order-section {
-    border-radius: 12px;
-    flex: 1;
-    min-width: 300px;
-    transition: all 0.3s ease;
-}
-
-.information-panel {
-    padding: 20px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center-align items within the information panel */
-}
-
-.information-panel img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-
-.information-panel img:hover {
-    transform: scale(1.02);
-}
-
-h1 {
-    font-size: 45px;
-    color: #1a237e;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, color 0.3s ease;
-    letter-spacing: 1px;
-}
-
-h1:hover {
-    transform: scale(1.1);
-    color: #0d47a1;
-}
-
-.tab-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.tab-button {
-    flex: 1;
-    padding: 10px;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #1a237e;
-    background-color: #e3f2fd;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.tab-button.active-button, .tab-button:hover {
-    background-color: #1a237e;
-    color: #fff;
-}
-
-.tab-content {
-    padding: 10px 0;
-    font-size: 16px;
-    color: #333;
-}
-
-.order-section {
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.price-calculator-form label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-.price-calculator-form select {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #e3f2fd;
-    color: #1a237e;
-}
-
-.total-cost-display, .cost-value {
-    font-size: 18px;
-    font-weight: 700;
-    color: #1a237e;
-    margin-top: 15px;
-}
-
-.cost-value {
-    font-weight: bold;
-}
-
-.update-price-button {
-    background-color: #1a237e;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 15px;
-    width: 100%;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.update-price-button:hover {
-    background-color: #0d47a1;
-    transform: translateY(-2px);
-}
-
-.design-upload-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 490px) {
-    .main-container {
-        padding: 15px;
-        margin: 15px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+    
+        .information-panel {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: linear-gradient(145deg, #ffffff, #f7faff);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .information-panel:hover {
+            transform: translateY(-10px);
+            box-shadow: 8px 16px 32px rgba(0, 0, 0, 0.15);
+        }
+    
+        .information-panel img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+    
+        .information-panel img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+    
+        h1 {
+            font-size: 36px;
+            color: #000000;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: textPop 0.8s ease-in-out;
+        }
+    
+        .tab-buttons {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .tab-content p {
+        font-size: 20px;
+        color: #000000;
+        line-height: 1.6;
     }
 
-    .information-panel {
-        align-items: center; /* Center the contents of information panel on small screens */
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #1a237e;
+            background: #e3f2fd;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    
+        .tab-button.active-button,
+        .tab-button:hover {
+            background: #1a237e;
+            color: #ffffff;
+            box-shadow: 3px 6px 12px rgba(26, 35, 126, 0.4);
+        }
+    
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    
+        .tab-content.active-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        ul li {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+        }
+    
+        ul li::before {
+            content: "✔";
+            color: #1a237e;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    
+       
+        @keyframes textPop {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+        }
+    
+        @media (max-width: 490px) {
+            .main-container {
+                padding: 20px;
+            }
+    
+            h1 {
+                font-size: 28px;
+            }
+    
+            .tab-button {
+                font-size: 14px;
+            }
+        }
     </style>
     
+    
     <script>
-        function calculateTotalPrice() {
-            const quantitySelector = document.getElementById('quantity-selector');
-            const selectedOption = quantitySelector.options[quantitySelector.selectedIndex];
-            const price = selectedOption.getAttribute('data-price');
-    
-            document.querySelector('.cost-value').textContent = `${(parseFloat(price)).toFixed(2)}`;
-            
-            const unitPrice = (price / quantitySelector.value).toFixed(2);
-            document.getElementById('unit-price-display').textContent = unitPrice;
-        }
-    
         function switchTabContent(tabName) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.style.display = 'none');
-            document.getElementById(tabName).style.display = 'block';
-            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active-button'));
-            event.target.classList.add('active-button');
-        }
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach((content) => {
+        content.classList.remove('active-content');
+    });
+    document.getElementById(tabName).classList.add('active-content');
+
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach((btn) => btn.classList.remove('active-button'));
+
+    event.target.classList.add('active-button');
+}
+
     </script>
+    
+    
     
     <div class="service-section">
         <div class="service-item">

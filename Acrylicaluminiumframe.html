@@ -573,51 +573,7 @@ function performSearch() {
             </div>
         </div>
     
-        <div class="order-section">
-            <form class="price-calculator-form">
-                <label for="size-selector">Size</label>
-                <select id="size-selector">
-                    <option>90 x 55mm</option>
-                    <option>85 x 54mm</option>
-                </select>
-                <label for="quantity-selector">Quantity</label>
-                <select id="quantity-selector" onchange="calculateTotalPrice()">
-                    <option value="250" data-price="9000">250</option>
-                    <option value="500" data-price="15000">500</option>
-                    <option value="1000" data-price="25000">1000</option>
-                </select>
-                <label for="material-selector">Material</label>
-                <select id="material-selector">
-                    <option>350gsm Gloss Art Board</option>
-                    <option>400gsm Matt Board</option>
-                </select>
-                <label for="print-side-selector">Printed Sides</label>
-                <select id="print-side-selector">
-                    <option>Front Only</option>
-                    <option>Front and Back</option>
-                </select>
-                <label for="lamination-selector">Lamination</label>
-                <select id="lamination-selector">
-                    <option>None</option>
-                    <option>Gloss</option>
-                    <option>Matt</option>
-                </select>
-                <label for="corner-style-selector">Corners</label>
-                <select id="corner-style-selector">
-                    <option>Square</option>
-                    <option>Rounded</option>
-                </select>
-                <label for="designer-selector">Hire Designer</label>
-                <select id="designer-selector">
-                    <option>No</option>
-                    <option>Yes</option>
-                </select>
-                <div class="total-cost-display">Total (Incl GST): ₹<span class="cost-value">9000.00</span></div>
-                <div>Unit Price: ₹<span id="unit-price-display">36.00</span></div>
-                <button type="button" class="update-price-button" onclick="calculateTotalPrice()">Update Price</button>
-            </form>
-        </div>
-    </div>
+       
    
     <style>
        

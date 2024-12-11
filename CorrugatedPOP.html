@@ -574,60 +574,7 @@ function performSearch() {
             </div>
         </div>
     
-        <div class="order-section">
-            <form class="price-calculator-form">
-                <label for="size-selector">Easel Height</label>
-                <select id="size-selector">
-                    <option>120 cm</option>
-                    <option>150 cm</option>
-                    <option>180 cm</option>
-                </select>
-        
-                <label for="quantity-selector">Quantity</label>
-                <select id="quantity-selector" onchange="calculateTotalPrice()">
-                    <option value="1" data-price="1500">1</option>
-                    <option value="5" data-price="7000">5</option>
-                    <option value="10" data-price="13000">10</option>
-                </select>
-        
-                <label for="material-selector">Wood Type</label>
-                <select id="material-selector">
-                    <option value="0">Standard Wood</option>
-                    <option value="2000">Premium Wood (+₹2000)</option>
-                </select>
-        
-                <label for="color-selector">Color</label>
-                <select id="color-selector">
-                    <option>Natural Wood</option>
-                    <option>Walnut Finish</option>
-                    <option>Black Matte</option>
-                </select>
-        
-                <label for="tilt-selector">Adjustable Tilt</label>
-                <select id="tilt-selector">
-                    <option value="0">No Tilt</option>
-                    <option value="500">Standard Tilt (+₹500)</option>
-                    <option value="1000">Full Tilt (+₹1000)</option>
-                </select>
-        
-                <label for="support-selector">Base Support</label>
-                <select id="support-selector">
-                    <option value="0">Standard Base</option>
-                    <option value="800">Reinforced Base (+₹800)</option>
-                </select>
-        
-                <label for="engraving-selector">Custom Engraving</label>
-                <select id="engraving-selector">
-                    <option value="0">No Engraving</option>
-                    <option value="1000">Engraving (+₹1000)</option>
-                </select>
-        
-                <div class="total-cost-display">Total (Incl GST): ₹<span class="cost-value">1500.00</span></div>
-                <div>Unit Price: ₹<span id="unit-price-display">1500.00</span></div>
-                <button type="button" class="update-price-button" onclick="calculateTotalPrice()">Update Price</button>
-            </form>
-        </div>
-        
+       
     </div>
     
     <style>
