@@ -569,161 +569,214 @@ function performSearch() {
                     <li>Easy to set up and take down</li>
                     <li>Vibrant color printing for eye-catching displays</li>
                     <li>Durable materials for long-lasting use</li>
-                </ul>
+                 </ul>
             </div>
         </div>
-    </div>
+    
+    </div>   </div>
     
    <style>
        
     
-        .main-container {
-            max-width: 1100px;
-            padding: 30px;
-
+       .main-container {
+            max-width: 1200px;
+            background: #ffffff;
+            padding: 25px;
+            box-shadow: 5px 10px 30px rgba(8, 8, 8, 0.1);
             display: flex;
-            justify-content: center;
             gap: 20px;
-            border-radius: 15px;
+            border-radius: 12px;
             margin: 30px auto;
             overflow: hidden;
-            animation: fadeIn 0.8s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out;
+            justify-content: center; /* Ensure center alignment horizontally */
+        }
+    
+        .information-panel, .order-section {
+            border-radius: 12px;
+            flex: 1;
+            min-width: 300px;
+            transition: all 0.3s ease;
         }
     
         .information-panel {
-            flex: 1;
-            min-width: 300px;
             padding: 20px;
-            background: linear-gradient(145deg, #ffffff, #f7faff);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-    
-        .information-panel:hover {
-            transform: translateY(-10px);
-            box-shadow: 8px 16px 32px rgba(0, 0, 0, 0.15);
+            background: #fff;
         }
     
         .information-panel img {
-            max-width: 100%;
-            height: auto;
+            width: 50%;
+            height: 200px;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            transition: transform 0.5s ease;
+            border-radius: 10px;
+            align-items: center;
+            margin-left: 300px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
         }
     
         .information-panel img:hover {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.02);
         }
     
         h1 {
-            font-size: 36px;
-            color: #000000;
+            font-size: 45px;
+            color: #1a237e;
             margin-bottom: 20px;
             font-weight: 700;
-            animation: textPop 0.8s ease-in-out;
+            text-align: center;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, color 0.3s ease;
+            letter-spacing: 1px;
+        }
+    
+        h1:hover {
+            transform: scale(1.1);
+            color: #0d47a1;
         }
     
         .tab-buttons {
             display: flex;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-        .tab-content p {
-        font-size: 20px;
-        color: #000000;
-        line-height: 1.6;
-    }
-
-        .tab-button {
-            flex: 1;
-            padding: 10px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            color: #1a237e;
-            background: #e3f2fd;
-            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            gap: 10px;
+            margin-top: 15px;
         }
     
-        .tab-button.active-button,
-        .tab-button:hover {
-            background: #1a237e;
-            color: #ffffff;
-            box-shadow: 3px 6px 12px rgba(26, 35, 126, 0.4);
+        .tab-button {
+            flex: 1;
+            padding: 12px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #1a237e;
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .tab-button.active-button, .tab-button:hover {
+            background-color: #1a237e;
+            color: #fff;
         }
     
         .tab-content {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-    
-        .tab-content.active-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-    
-        ul li {
-            margin: 8px 0;
+            padding: 10px 0;
             font-size: 16px;
-            color: #000000;
-            display: flex;
-            align-items: center;
+            color: #333;
         }
     
-        ul li::before {
-            content: "✔";
-            color: #1a237e;
-            margin-right: 10px;
+        .order-section {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    
+        .price-calculator-form label {
             font-size: 14px;
+            color: #333;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
     
-       
-        @keyframes textPop {
-            0% {
-                transform: scale(0.9);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
+        .price-calculator-form select {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #e3f2fd;
+            color: #1a237e;
+        }
+    
+        .total-cost-display, .cost-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-top: 15px;
+        }
+    
+        .cost-value {
+            font-weight: bold;
+        }
+    
+        .update-price-button {
+            background-color: #1a237e;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 15px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .update-price-button:hover {
+            background-color: #0d47a1;
+            transform: translateY(-2px);
+        }
+    
+        .design-upload-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    
+        /* Large screen adjustments */
+        @media (min-width: 1024px) {
+            .main-container {
+                flex-direction: row;
+                justify-content: center; /* Keep centered horizontally */
             }
         }
     
+        /* Tablet and smaller screen adjustments */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column; /* Stacks the panels vertically */
+                gap: 20px; /* Add space between sections */
+            }
+            .information-panel img {
+                width: 80%; /* Adjust image width for smaller screens */
+                margin-left: 0;
+            }
+        }
+    
+        /* Phone screen adjustments */
         @media (max-width: 768px) {
             .main-container {
-                flex-direction: column;
-            }
-        }
-    
-        @media (max-width: 490px) {
-            .main-container {
-                padding: 20px;
+                padding: 15px; /* Reduced padding for smaller screens */
             }
     
             h1 {
-                font-size: 28px;
+                font-size: 36px; /* Slightly smaller font size for small screens */
+            }
+    
+            .tab-buttons {
+                flex-direction: column;
             }
     
             .tab-button {
-                font-size: 14px;
+                width: 100%; /* Full width for buttons */
+            }
+    
+            .information-panel img {
+                width: 100%; /* Full width image on small screens */
+            }
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>

@@ -563,16 +563,16 @@ function performSearch() {
                     <li>Easy to set up and take down</li>
                     <li>Vibrant color printing for eye-catching displays</li>
                     <li>Durable materials for long-lasting use</li>
-                </ul>
+                 </ul>
             </div>
         </div>
     
+    </div>   
        
    
     <style>
        
-    
-        .main-container {
+    .main-container {
             max-width: 1200px;
             background: #ffffff;
             padding: 25px;
@@ -583,6 +583,7 @@ function performSearch() {
             margin: 30px auto;
             overflow: hidden;
             animation: fadeIn 0.5s ease-in-out;
+            justify-content: center; /* Ensure center alignment horizontally */
         }
     
         .information-panel, .order-section {
@@ -598,10 +599,12 @@ function performSearch() {
         }
     
         .information-panel img {
-            width: 100%;
-            height: 490px; /* Explicitly setting the height to 490px */
+            width: 50%;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
+            align-items: center;
+            margin-left: 300px;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
         }
@@ -611,21 +614,21 @@ function performSearch() {
         }
     
         h1 {
-    font-size: 45px; /* Increased font size for better visibility */
-    color: #1a237e;
-    margin-bottom: 20px;
-    font-weight: 700; /* Bold font weight */
-    text-align: center; /* Center the text */
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Deeper shadow for a more modern look */
-    transition: transform 0.3s ease, color 0.3s ease; /* Animation for scaling */
-    letter-spacing: 1px; /* Slightly increased letter spacing for modern appeal */
-}
-
-h1:hover {
-    transform: scale(1.1); /* Slightly enlarge the text on hover */
-    color: #0d47a1; /* Change color on hover for effect */
-}
-
+            font-size: 45px;
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, color 0.3s ease;
+            letter-spacing: 1px;
+        }
+    
+        h1:hover {
+            transform: scale(1.1);
+            color: #0d47a1;
+        }
+    
         .tab-buttons {
             display: flex;
             gap: 10px;
@@ -670,9 +673,9 @@ h1:hover {
     
         .price-calculator-form select {
             width: 100%;
-            padding: 8px; /* Adjusted padding for a better fit */
+            padding: 8px;
             font-size: 14px;
-            margin-bottom: 10px; /* Reduced margin for less space */
+            margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
             background: #e3f2fd;
@@ -717,9 +720,46 @@ h1:hover {
             margin-top: 10px;
         }
     
+        /* Large screen adjustments */
+        @media (min-width: 1024px) {
+            .main-container {
+                flex-direction: row;
+                justify-content: center; /* Keep centered horizontally */
+            }
+        }
+    
+        /* Tablet and smaller screen adjustments */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column; /* Stacks the panels vertically */
+                gap: 20px; /* Add space between sections */
+            }
+            .information-panel img {
+                width: 80%; /* Adjust image width for smaller screens */
+                margin-left: 0;
+            }
+        }
+    
+        /* Phone screen adjustments */
         @media (max-width: 768px) {
             .main-container {
+                padding: 15px; /* Reduced padding for smaller screens */
+            }
+    
+            h1 {
+                font-size: 36px; /* Slightly smaller font size for small screens */
+            }
+    
+            .tab-buttons {
                 flex-direction: column;
+            }
+    
+            .tab-button {
+                width: 100%; /* Full width for buttons */
+            }
+    
+            .information-panel img {
+                width: 100%; /* Full width image on small screens */
             }
         }
     
